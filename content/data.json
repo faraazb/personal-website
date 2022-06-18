@@ -1,0 +1,108 @@
+{
+  "hello": {
+    "header": "Hello!",
+    "subtitle": "I am Faraaz Biyabani, a computer engineering student at the University of Mumbai. I love writing code to create meaningful products."
+  },
+  "contact": {
+    "github": "https://github.com/faraazb",
+    "mail": "mailto:mfaraazb@gmail.com",
+    "linkedin": "https://linkedin.com/in/faraazb",
+    "twitter": "https://twitter.com/mfaraazb"
+  },
+  "contactForm": {
+    "url": "https://send.pageclip.co/gYOwvJ8OfqwHw5DxtVPZkh7HwdCsmXmj",
+    "pageClipSiteKey": "gYOwvJ8OfqwHw5DxtVPZkh7HwdCsmXmj",
+    "formName": "contact-form"
+  },
+  "resume": {
+    "embedUrl": "https://drive.google.com/file/d/19YXpH35ODAopDbyCPTRWImxE2PP_1I3N/preview"
+  },
+  "skills": [
+    {
+      "label": "Python",
+      "icon": "Python"
+    },
+    {
+      "label": "JavaScript",
+      "icon": "JavaScript"
+    },
+    {
+      "label": "Java",
+      "icon": "Java"
+    },
+    {
+      "label": "Git",
+      "icon": "Git"
+    },
+    {
+      "label": "SQL",
+      "icon": "SQL",
+      "mono": true
+    },
+    {
+      "label": "GraphQL",
+      "icon": "GraphQL"
+    },
+    {
+      "label": "ReactJS",
+      "icon": "ReactJS"
+    },
+    {
+      "label": "Flask",
+      "icon": "Flask",
+      "mono": true
+    }
+  ],
+  "projects": [
+    {
+      "title": "DCroSS",
+      "accent": "",
+      "links": [
+        {"type": "GitHub", "url": "https://github.com/DCroSSLab"},
+        {"type": "YouTube", "url": "https://youtu.be/XwCat9TJUuE"}
+      ],
+      "display": {
+        "light": "../src/static/images/screenshot_dcross.jpg",
+        "dark": "../src/static/images/screenshot_dcross.jpg"
+      },
+      "description": "Disaster Crowd-sourcing and Support System (DCroSS) is a project built for disaster managers to collect data during time critical disaster situations. It placed third in IITB's e-Yantra Innovation Challenge 2020-21. It uses web scraping and chatbots to aggregate data from various sources and provides a dashboard to consume this data."
+    },
+    {
+      "title": "Find-a-CoWIN",
+      "accent": "pink",
+      "links": [
+        {"type": "GitHub", "url": "https://github.com/faraazb/find-a-cowin"},
+        {"type": "Website", "url": "https://faraazb.github.io/find-a-cowin"}
+      ],
+      "display": {
+        "light": "../src/static/images/screenshot_findacowin_light.png",
+        "dark": "../src/static/images/screenshot_findacowin_dark.png"
+      },
+      "description": "Find-a-CoWIN is a slot finder for MoHFW's (India) CoWIN vaccination platform. It uses the CoWIN Public API to get the vaccination slots data for any district in any state across India. It has extensive filtering options, light or dark themes and the ability to star or bookmark vaccination centers."
+    },
+    {
+      "title": "Feedbacker",
+      "accent": "yellow",
+      "links": [
+        {"type": "GitHub", "url": "https://github.com/faraazb/feedbacker"}
+      ],
+      "display": {
+        "light": "../src/static/images/screenshot_feedbacker.png",
+        "dark": "../src/static/images/screenshot_feedbacker.png"
+      },
+      "description": "Feedbacker is a tool that can be used to collect, manage and display product feedbacks on landing pages. Feedbacks or reviews can be collected using a form and embedded into other sites using an iframe, and a dashboard can be used to control which feedbacks have to be displayed."
+    },
+    {
+      "title": "mycrowbot",
+      "accent": "green",
+      "links": [
+        {"type": "GitHub", "url": "https://github.com/faraazb/mycrowbot"}
+      ],
+      "display": {
+        "light": "../src/static/images/screenshot_mycrowbot.png",
+        "dark": "../src/static/images/screenshot_mycrowbot.png"
+      },
+      "description": "mycrowbot is a Telegram bot that can be used by educational institutions to distribute any educational resource to students. The bot can be managed by class, college and super admins who can add and delete resources and also allow or deny access to other students."
+    }
+  ]
+}

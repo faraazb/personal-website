@@ -1,0 +1,64 @@
+@use "~include-media/dist/include-media" as query;
+
+.home-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include query.media('<=phone') {
+    // Exclude the header area, on larger screens, center aligning works fine
+    margin-top: 10%;
+  }
+}
+
+#home {
+  display: grid;
+  grid-template-columns: 0.95fr 250px;
+  grid-column-gap: 25px;
+  place-content: center;
+  @include query.media('<=tablet') {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.photo {
+  border: 1px solid var(--border-primary);
+  padding: 15px;
+  @include query.media('<=tablet') {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 150px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    border-radius: 50%;
+    border-style: dashed;
+  }
+}
+
+.profile-picture {
+  @include query.media('<=tablet') {
+    border-radius: 50%;
+  }
+}
+
+.hello > .links {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.hello > .links > .link > .icon {
+  width: 25px;
+}
+
+.hello > .links > a > .accent-button {
+  border-radius: 20px;
+  border: 1px solid var(--text-primary);
+  box-shadow: 0 3px 0 var(--text-primary);
+}
+
+.link {
+  width: 30px;
+  display: flex;
+}

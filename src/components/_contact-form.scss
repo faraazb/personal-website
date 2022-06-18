@@ -1,0 +1,98 @@
+@use "~include-media/dist/include-media" as query;
+
+
+.footnote {
+  color: var(--text-primary);
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.contact-container {
+  width: 45%;
+  @include query.media('<=phone') {
+    width: 90%
+  }
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  margin-bottom: 60px;
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 10px;
+  justify-content: center;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item.input-field {
+  min-width: 250px;
+  flex-grow: 1;
+}
+
+.form-item.message {
+  min-width: 100%;
+}
+
+.form-item {
+  > textarea, input {
+    font-size: 14px;
+    -webkit-appearance: none;
+    outline: none;
+    background-color: var(--background-secondary);
+    border: 0.1rem solid var(--border-primary);
+    border-radius: 2px;
+  }
+  > textarea:focus-visible, input:focus-visible {
+    outline: 0.15rem solid var(--cyan-10);
+  }
+  > textarea {
+    min-height: 80px;
+  }
+  > input {
+    min-height: 30px;
+  }
+}
+
+.form-item.submit {
+  width: 140px;
+  justify-self: center;
+}
+
+.form-item.submit > .accent-button {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  place-content: center;
+  align-items: center;
+  width: 140px;
+  height: 47px;
+  overflow: auto;
+}
+
+.loader {
+  width: 25px;
+  height: 25px;
+  border: 3px dotted var(--text-primary);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

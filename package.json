@@ -1,0 +1,38 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Faraaz Biyabani's personal website",
+  "author": "Faraaz Biyabani",
+  "keywords": [
+    "gatsby",
+    "portfolio"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && gh-pages -d public"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.6.4",
+    "gatsby": "^4.6.0",
+    "gatsby-plugin-image": "^2.6.0",
+    "gatsby-plugin-manifest": "^4.16.0",
+    "gatsby-plugin-sass": "^5.6.0",
+    "gatsby-plugin-sharp": "^4.16.1",
+    "gatsby-source-filesystem": "^4.16.0",
+    "gatsby-transformer-json": "^4.16.0",
+    "gatsby-transformer-sharp": "^4.16.0",
+    "include-media": "^1.4.10",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sass": "^1.49.0",
+    "sharp": "^0.30.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
