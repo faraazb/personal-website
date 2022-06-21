@@ -124,7 +124,7 @@ const Header = () => {
                                         {({active}) => (
                                             <LinkWrapper
                                                 className={`${active ? 'item-active' : ''} nav-menu-item`}
-                                                href={'#hello'}
+                                                href={'/#about'}
                                             >
                                                 About
                                             </LinkWrapper>
@@ -134,7 +134,7 @@ const Header = () => {
                                         {({active}) => (
                                             <LinkWrapper
                                                 className={`${active ? 'item-active' : ''} nav-menu-item`}
-                                                href={'#projects'}
+                                                href={'/#projects'}
                                             >
                                                 Projects
                                             </LinkWrapper>
