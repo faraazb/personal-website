@@ -3,25 +3,36 @@ import './header.scss';
 import {Link} from 'gatsby';
 import {LinkWrapper} from './link';
 import {Menu} from '@headlessui/react';
-import {darkThemeIcon, hamburgerIcon, lightThemeIcon} from "./icons";
+import {darkThemeIcon, hamburgerIcon, lightThemeIcon, logo} from "./icons";
 import ThemeContext from "./ThemeContext";
 
 
 const Header = () => {
-    const supportPageOffset = window.scrollX !== undefined;
-    const isCSS1Compat = (document.compatMode || '') === 'CSS1Compat';
+    const isBrowser = typeof window !== 'undefined';
     const {theme, switchTheme} = useContext(ThemeContext);
     const [scrollDirection, setScrollDirection] = useState('');
 
+    let supportPageOffset, isCSS1Compat;
+    if (isBrowser) {
+        supportPageOffset = window.scrollX !== undefined;
+        isCSS1Compat = (document.compatMode || '') === 'CSS1Compat';
+    }
+
     const getScrollY = useCallback(() => {
+        if (!isBrowser) {
+            return;
+        }
         return supportPageOffset
             ? window.scrollY
             : isCSS1Compat
                 ? document.documentElement.scrollTop
                 : document.body.scrollTop;
-    }, [isCSS1Compat, supportPageOffset])
+    }, [isCSS1Compat, supportPageOffset, isBrowser]);
 
     useEffect(() => {
+        if (!isBrowser) {
+            return;
+        }
         const threshold = 100;
 
         let previousScrollY = getScrollY();
@@ -53,7 +64,7 @@ const Header = () => {
         }
 
         return () => window.removeEventListener('scroll', onScroll);
-    }, [scrollDirection, getScrollY]);
+    }, [scrollDirection, getScrollY, isBrowser]);
 
     let switchThemeIcon;
     if (theme === 'dark') {
@@ -67,7 +78,7 @@ const Header = () => {
         <header id='nav-header' className={scrollDirection}>
             <div className='logo'>
                 <Link to='/' id='logo-link'>
-                    Faraaz Biyabani
+                    {logo}
                 </Link>
             </div>
             <div className='nav-links'>
@@ -102,7 +113,7 @@ const Header = () => {
                                         {({active}) => (
                                             <div
                                                 className={`${active ? 'item-active' : ''} nav-menu-item icon-button`}
-                                                onClick={switchTheme}
+                                                onClick={switchTheme} role='button'
                                             >
                                                 {switchThemeIcon}
                                                 <span className='icon-button-label'>Switch Theme</span>
