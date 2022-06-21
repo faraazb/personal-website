@@ -2,7 +2,7 @@ import React, {createContext, useState} from 'react';
 
 
 const defaultState = {
-    theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+    theme: 'light',
     switchTheme: () => {}
 }
 
@@ -10,7 +10,11 @@ const ThemeContext = createContext(defaultState);
 
 
 const ThemeProvider = ({children}) => {
-    let osTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const isBrowser = typeof window !== 'undefined';
+    let osTheme = 'light';
+    if (isBrowser) {
+        osTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
     const [theme, setTheme] = useState(osTheme);
 
     const switchTheme = () => {
