@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpersonal_website=self.webpackChunkpersonal_website||[]).push([[903],{2592:function(e,t,l){l.r(t);var a=l(7294),n=l(4195),r=l(8285);t.default=function(){return a.createElement("main",null,a.createElement("title",null,"Resume "),a.createElement(n.Z,null,a.createElement("div",{className:"resume-container"},a.createElement("div",{className:"resume"},a.createElement("iframe",{id:"resume-iframe",title:"Resume",src:r.v4.f,allow:"autoplay"})))))}}}]);
+//# sourceMappingURL=component---src-pages-resume-js-43ffe50f78278a60aa92.js.map
