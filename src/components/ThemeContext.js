@@ -2,7 +2,7 @@ import React, {createContext, useState} from 'react';
 
 
 const defaultState = {
-    theme: 'light',
+    theme: '',
     switchTheme: () => {}
 }
 
