@@ -66,13 +66,7 @@ const Header = () => {
         return () => window.removeEventListener('scroll', onScroll);
     }, [scrollDirection, getScrollY, isBrowser]);
 
-    let switchThemeIcon;
-    if (theme === 'dark') {
-        switchThemeIcon = lightThemeIcon;
-    }
-    else {
-        switchThemeIcon = darkThemeIcon;
-    }
+    let switchThemeIcon = theme === 'light' ? darkThemeIcon : lightThemeIcon;
 
     return (
         <header id='nav-header' className={scrollDirection}>
