@@ -86,8 +86,8 @@ const Footer = () => {
                 <span className='contact-form-response'>{response}</span>
             </div>
             <div className='footer-nav-links'>
-                <a className='footer-link' href={'/#about'}>About</a>
-                <a className='footer-link' href={'/#projects'}>Projects</a>
+                <Link className='footer-link' to={'/#about'}>About</Link>
+                <Link className='footer-link' to={'/#projects'}>Projects</Link>
                 <Link className='footer-link' to={'/resume'}>Resume</Link>
             </div>
             <div className='contact-links'>
