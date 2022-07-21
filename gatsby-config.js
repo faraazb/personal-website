@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
   siteMetadata: {
       title: `Faraaz Biyabani`,
-    siteUrl: `https://faraazb.github.io`
+    siteUrl: `https://faraazbiyabani.me`
   },
   plugins: [
       `gatsby-plugin-sass`,
