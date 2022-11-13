@@ -13,7 +13,7 @@ const IndexPage = ({data}) => {
 
     return (
         <main>
-            <title>Home Page - Faraaz Biyabani</title>
+            <title>Faraaz Biyabani</title>
             <Layout>
                 <div id='about' className='home-container'>
                     <div id='home'>

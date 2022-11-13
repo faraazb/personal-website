@@ -7,7 +7,7 @@ import data from "../../content/data.json"
 const Resume = () => {
     return (
         <main>
-            <title>Resume </title>
+            <title>Resume | Faraaz Biyabani</title>
             <Layout>
                 <div className='resume-container'>
                     <div className='resume'>
