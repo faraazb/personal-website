@@ -1,6 +1,7 @@
 const React = require("react");
 
-exports.onRenderBody = ({setPostBodyComponents}) => {
+exports.onRenderBody = ({setPostBodyComponents, setHtmlAttributes}) => {
+    setHtmlAttributes({ lang: "en" })
     setPostBodyComponents([
         <script
             id={'pageclip'}
