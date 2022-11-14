@@ -58,21 +58,21 @@ const Footer = () => {
                     <div className='form-item input-field'>
                         <label htmlFor='name'>Name</label>
                         <input
-                            type='text' name='name' value={contactForm.name}
+                            id="name" type='text' name='name' value={contactForm.name}
                             onChange={contactFormFieldChange} required placeholder='Your name'
                         />
                     </div>
                     <div className='form-item input-field'>
                         <label htmlFor='email'>E-mail</label>
                         <input
-                            type='email' name='email' value={contactForm.email}
+                            id="email" type='email' name='email' value={contactForm.email}
                             onChange={contactFormFieldChange} required placeholder='Your e-mail ID'
                         />
                     </div>
                     <div className='form-item input-field message'>
-                        <label htmlFor='name'>Message</label>
+                        <label htmlFor='message'>Message</label>
                         <textarea
-                            name='message' value={contactForm.message}
+                            id="message" name='message' value={contactForm.message}
                             onChange={contactFormFieldChange} required
                             placeholder='Your message...'
                         />

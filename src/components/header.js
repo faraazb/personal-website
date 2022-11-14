@@ -71,7 +71,7 @@ const Header = () => {
     return (
         <header id='nav-header' className={scrollDirection}>
             <div className='logo'>
-                <Link to='/' id='logo-link'>
+                <Link to='/' id='logo-link' draggable={false} aria-label="Link to home page">
                     {logo}
                 </Link>
             </div>
@@ -108,6 +108,7 @@ const Header = () => {
                                             <button
                                                 className={`${active ? 'item-active' : ''} nav-menu-item icon-button`}
                                                 onClick={switchTheme}
+                                                aria-label='Switch theme'
                                             >
                                                 {switchThemeIcon}
                                                 <span className='icon-button-label'>Switch Theme</span>
