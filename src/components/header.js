@@ -105,13 +105,13 @@ const Header = () => {
                                 <Menu.Items static className='nav-menu-items'>
                                     <Menu.Item>
                                         {({active}) => (
-                                            <div
+                                            <button
                                                 className={`${active ? 'item-active' : ''} nav-menu-item icon-button`}
-                                                onClick={switchTheme} role='button'
+                                                onClick={switchTheme}
                                             >
                                                 {switchThemeIcon}
                                                 <span className='icon-button-label'>Switch Theme</span>
-                                            </div>
+                                            </button>
                                         )}
                                     </Menu.Item>
                                     <Menu.Item>

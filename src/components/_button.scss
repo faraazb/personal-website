@@ -2,8 +2,11 @@
   $breakpoints: (phone: 450px, tablet: 810px, desktop: 1024px)
 );
 
-
 .button-link {
+  text-decoration: none;
+}
+
+.button-link > div {
   display: flex;
   flex-direction: row;
   align-items: center;

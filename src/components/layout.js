@@ -8,11 +8,10 @@ const Layout = ({ children }) => {
 
     return (
         <div className='layout'>
-            <title>Home Page</title>
             <Header/>
-            <div className='content'>
+            <main className='content'>
                 {children}
-            </div>
+            </main>
             <Footer />
         </div>
     );

@@ -36,12 +36,17 @@ const LinkButton = (props) => {
     }
 
     return (
-        <a href={link} {...rest} tabIndex={-1}>
-            <button className={`accent-button ${accent}`}>
-                <div className='button-link'>
-                    {icon}<span>{type}</span>
-                </div>
-            </button>
+        // <a href={link} {...rest} tabIndex={-1}>
+        //     <button className={`accent-button ${accent}`}>
+        //         <div className='button-link'>
+        //             {icon}<span>{type}</span>
+        //         </div>
+        //     </button>
+        // </a>
+        <a href={link} className='button-link' tabIndex={-1} {...rest} >
+            <div className={`accent-button ${accent}`}>
+                {icon}<span>{type}</span>
+            </div>
         </a>
     )
 }
