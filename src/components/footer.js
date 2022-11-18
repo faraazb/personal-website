@@ -3,7 +3,7 @@ import './footer.scss';
 import data from '../../content/data.json'
 import {githubIcon, linkedinIcon, mailIcon, paperPlaneIcon, twitterIcon} from './icons';
 import {Link} from 'gatsby';
-import {Anchor} from './link';
+import {ContactLink} from './link';
 
 
 const Footer = () => {
@@ -86,15 +86,15 @@ const Footer = () => {
                 <span className='contact-form-response'>{response}</span>
             </div>
             <div className='footer-nav-links'>
-                <Link className='footer-link' to={'/#about'}>About</Link>
-                <Link className='footer-link' to={'/#projects'}>Projects</Link>
-                <Link className='footer-link' to={'/resume'}>Resume</Link>
+                <Link className='underline-link' to={'/#about'}>About</Link>
+                <Link className='underline-link' to={'/#projects'}>Projects</Link>
+                <Link className='underline-link' to={'/resume'}>Resume</Link>
             </div>
             <div className='contact-links'>
-                <Anchor href={data.contact.mail} text='Mail' icon={mailIcon} title='E-mail'/>
-                <Anchor href={data.contact.github} text='GitHub' icon={githubIcon}/>
-                <Anchor href={data.contact.linkedin} text='LinkedIn' icon={linkedinIcon}/>
-                <Anchor href={data.contact.twitter} text='Twitter' icon={twitterIcon}/>
+                <ContactLink href={data.contact.mail} text='Mail' icon={mailIcon} title='E-mail'/>
+                <ContactLink href={data.contact.github} text='GitHub' icon={githubIcon}/>
+                <ContactLink href={data.contact.linkedin} text='LinkedIn' icon={linkedinIcon}/>
+                <ContactLink href={data.contact.twitter} text='Twitter' icon={twitterIcon}/>
             </div>
             <span id='bye'>Until we meet again!</span>
         </footer>

@@ -17,9 +17,9 @@ const NotFoundPage = () => {
               <div className='not-found-links-container'>
                   Try these links instead
                   <div className='footer-nav-links'>
-                      <a className='footer-link' href={'/#hello'}>About</a>
-                      <a className='footer-link' href={'/#projects'}>Projects</a>
-                      <a className='footer-link' href={'/resume'}>Resume</a>
+                      <a className='underline-link' href={'/#hello'}>About</a>
+                      <a className='underline-link' href={'/#projects'}>Projects</a>
+                      <a className='underline-link' href={'/resume'}>Resume</a>
                   </div>
               </div>
           </div>

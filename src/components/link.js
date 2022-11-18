@@ -50,14 +50,14 @@ const LinkButton = (props) => {
 }
 
 
-const Anchor = (props) => {
+const ContactLink = (props) => {
     const {href, text, icon, title} = props
     return (
-        <a className='contact-link footer-link' href={href} target='_blank' rel='noreferrer' title={title || text}>
-            {icon}<span className='contact-link-label'>{text}</span>
+        <a className='contact-link underline-link' href={href} target='_blank' rel='noreferrer' title={title || text}>
+            {icon && icon}<span className='contact-link-label'>{text}</span>
         </a>
     )
 }
 
 
-export {LinkWrapper, LinkButton, Anchor};
+export {LinkWrapper, LinkButton, ContactLink};

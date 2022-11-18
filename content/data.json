@@ -1,7 +1,7 @@
 {
   "hello": {
     "header": "Hello!",
-    "subtitle": "I am Faraaz Biyabani, a computer engineering student at the University of Mumbai. I love writing code to create meaningful products."
+    "subtitle": "I am Faraaz Biyabani, a computer engineering student at the University of Mumbai. I am always curious about technology and love writing code to create purposeful things."
   },
   "contact": {
     "github": "https://github.com/faraazb",
@@ -93,16 +93,16 @@
       "description": "Feedbacker is a tool that can be used to collect, manage and display product feedbacks on landing pages. Feedbacks or reviews can be collected using a form and embedded into other sites using an iframe, and a dashboard can be used to control which feedbacks have to be displayed."
     },
     {
-      "title": "mycrowbot",
+      "title": "Markerr",
       "accent": "green",
       "links": [
-        {"type": "GitHub", "url": "https://github.com/faraazb/mycrowbot"}
+        {"type": "GitHub", "url": "https://github.com/faraazb/markerr"}
       ],
       "display": {
-        "light": "../src/static/images/screenshot_mycrowbot.png",
-        "dark": "../src/static/images/screenshot_mycrowbot.png"
+        "light": "../src/static/images/screenshot_markerr.png",
+        "dark": "../src/static/images/screenshot_markerr.png"
       },
-      "description": "mycrowbot is a Telegram bot that can be used by educational institutions to distribute any educational resource to students. The bot can be managed by class, college and super admins who can add and delete resources and also allow or deny access to other students."
+      "description": "Markerr is a collaborative webpage annotation tool which can be used to comment on live websites. HTML elements can be tagged and text can be highlighted to discuss visual bugs or provide feedback. Markerr can eliminate feedback scattered across screenshots and multiple platforms."
     }
   ]
 }

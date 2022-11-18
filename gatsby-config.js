@@ -1,10 +1,15 @@
 const path = require("path");
 
 
+const siteUrl = process.env.NODE_ENV === "development" ?
+    `http://localhost:8000` :
+    `https://faraazbiyabani.me`
+
+// noinspection HttpUrlsUsage
 module.exports = {
     siteMetadata: {
         title: `Faraaz Biyabani`,
-        siteUrl: `https://faraazbiyabani.me`,
+        siteUrl: siteUrl,
         description: `Student, aspiring software engineer`,
         twitter: {
             card: `summary`,

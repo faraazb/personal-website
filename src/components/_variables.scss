@@ -4,7 +4,7 @@ $black: #000;
 $color-neutral-20: #cdcdcd;
 
 /*
-Kind-of color pallete
+Kind-of color palette
 */
 //light theme
 $light-theme-blue-10: #53b5e4;
@@ -23,34 +23,40 @@ $light-theme-cyan-20: #30b8e1;
 
 //dark theme
 $dark-theme-blue-10: #6f94a6;
-$dark-theme-green-10: #5c945c;
-$dark-theme-green-20: #508350;
+$dark-theme-green-10: #447544;
+$dark-theme-green-20: #4d814d;
 $dark-theme-green-30: #4e7c4e;
 $dark-theme-green-40: #5ca96c;
-$dark-theme-yellow-10: #b4a549;
-$dark-theme-yellow-20: #9b9040;
+$dark-theme-yellow-10: #7d701f;
+$dark-theme-yellow-20: #8c7e27;
 $dark-theme-yellow-30: #b6b66f;
-$dark-theme-pink-10: #b77c89;
-$dark-theme-pink-20: #9d6773;
+//$dark-theme-pink-10: #b77c89;
+$dark-theme-pink-10: #aa465c;
+$dark-theme-pink-20: #b24c63;
 $dark-theme-pink-30: #c2919c;
-$dark-theme-cyan-10: #2995b4;
-$dark-theme-cyan-20: #06839a;
+//$dark-theme-cyan-10: #2995b4;
+$dark-theme-cyan-10: #0a7b9b;
+$dark-theme-cyan-20: #167f9d;
 
 /*
 Color for various elements
 */
 //light theme
 $light-text-primary: #1b1b1b;
+$light-text-secondary: #1b1b1b;
 $light-background-primary: $white;
 $light-background-secondary: #f5f5f5;
 $light-border-primary: $color-neutral-20;
 $light-button-border: #364346;
 $light-theme-hover: rgba(0, 0, 0, 0.10);
+$light-theme-icon-container-hover: #e6e6e6;
 
 //dark theme
 $dark-text-primary: #fff;
+$dark-text-secondary: #d0f4f1;
 $dark-background-primary: #1c1b22;
 $dark-background-secondary: #302c38;
 $dark-border-primary: $color-neutral-20;
 $dark-button-border: #f5f5f5;
 $dark-theme-hover: rgba(255, 255, 255, 0.10);
+$dark-theme-icon-container-hover: #3b3842

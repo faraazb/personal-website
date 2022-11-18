@@ -18,7 +18,7 @@ const Card = (props) => {
             </div>
             <div className="window">
                 <div className='display'>
-                    <GatsbyImage alt={"Project screenshot"} image={media.childImageSharp.gatsbyImageData} />
+                    <GatsbyImage className="image" alt={"Project screenshot"} image={media.childImageSharp.gatsbyImageData} />
                 </div>
                 <p className="description">
                     {description}

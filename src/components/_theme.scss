@@ -4,12 +4,14 @@
   color-scheme: light;
 
   --text-primary: #{$light-text-primary};
+  --text-secondary: #{$light-text-secondary};
   --background-primary: #{$light-background-primary};
   --background-secondary: #{$light-background-secondary};
   --border-primary: #{$black};
   --button-border: #{$light-button-border};
   --header-bg: rgba(255, 255, 255, 0.9);
   --icon-button-hover: #{$light-theme-hover};
+  --icon-container-hover: #{$light-theme-icon-container-hover};
 
   --blue-10: #{$light-theme-blue-10};
   --green-10: #{$light-theme-green-10};
@@ -30,6 +32,7 @@
   color-scheme: dark;
 
   --text-primary: #{$dark-text-primary};
+  --text-secondary: #{$dark-text-secondary};
   --background-primary: #{$dark-background-primary};
   --background-secondary: #{$dark-background-secondary};
   --border-primary: #{$dark-border-primary};
@@ -37,6 +40,7 @@
   --header-bg: rgb(40, 38, 48, 0.9);
 
   --icon-button-hover: #{$dark-theme-hover};
+  --icon-container-hover: #{$dark-theme-icon-container-hover};
   --blue-10: #{$dark-theme-blue-10};
   --green-10: #{$dark-theme-green-10};
   --green-20: #{$dark-theme-green-20};
