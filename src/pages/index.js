@@ -103,7 +103,7 @@ const IndexPage = ({ data }) => {
 										<div className="role">{role}</div>
 										<div className="details">
 											<a
-												href="https://www.yunometa.com"
+												href={companyLink}
 												target="_blank"
 												rel="noreferrer"
 											>
