@@ -53,13 +53,49 @@
       "mono": true
     }
   ],
+  "experiences": [
+    {
+      "role": "Associate Software Engineering Intern",
+      "duration": "January 2023 - Present",
+      "company": "Contentstack",
+      "companyLink": "https://www.contentstack.com",
+      "companyLogo": "../src/static/images/contentstack.jpg"
+    },
+    {
+      "role": "Web Development Intern",
+      "duration": "August 2022 - January 2023",
+      "company": "Yunometa",
+      "companyLink": "https://www.yunometa.com",
+      "companyLogo": "../src/static/images/yunometa.png"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Techsurf 2022 — Second Runner-up",
+      "description": "About 12,000 students participated in this annual hackathon organized Contentstack. In the final stage, I was tasked with building a webpage annotation tool which I named Markerr.",
+      "logo": "../src/static/images/techsurf.png",
+      "link": "https://unstop.com/competition/techsurf-2022-contentstack-359635/case-submissions/44082?d=eyJwYWdlIjoxLCJ0ZWFtSWQiOjg4MDc5NDksImFzc29jaWF0aW9uSWQiOjIwODUwMn0="
+    },
+    {
+      "title": "e-YIC 2020-21 — Bronze Prize",
+      "description": "A competition organized by e-Yantra (IIT Bombay) with a disaster management theme and about 400 participating teams from engineering institutions across India.",
+      "logo": "../src/static/images/eyantra.png",
+      "link": "https://eyic.e-yantra.org/"
+    }
+  ],
   "projects": [
     {
       "title": "DCroSS",
       "accent": "",
       "links": [
-        {"type": "GitHub", "url": "https://github.com/DCroSSLab"},
-        {"type": "YouTube", "url": "https://youtu.be/XwCat9TJUuE"}
+        {
+          "type": "GitHub",
+          "url": "https://github.com/DCroSSLab"
+        },
+        {
+          "type": "YouTube",
+          "url": "https://youtu.be/XwCat9TJUuE"
+        }
       ],
       "display": {
         "light": "../src/static/images/screenshot_dcross.jpg",
@@ -71,8 +107,14 @@
       "title": "Find-a-CoWIN",
       "accent": "pink",
       "links": [
-        {"type": "GitHub", "url": "https://github.com/faraazb/find-a-cowin"},
-        {"type": "Website", "url": "https://faraazb.github.io/find-a-cowin"}
+        {
+          "type": "GitHub",
+          "url": "https://github.com/faraazb/find-a-cowin"
+        },
+        {
+          "type": "Website",
+          "url": "https://faraazb.github.io/find-a-cowin"
+        }
       ],
       "display": {
         "light": "../src/static/images/screenshot_findacowin_light.png",
@@ -84,7 +126,10 @@
       "title": "Feedbacker",
       "accent": "yellow",
       "links": [
-        {"type": "GitHub", "url": "https://github.com/faraazb/feedbacker"}
+        {
+          "type": "GitHub",
+          "url": "https://github.com/faraazb/feedbacker"
+        }
       ],
       "display": {
         "light": "../src/static/images/screenshot_feedbacker.png",
@@ -96,7 +141,10 @@
       "title": "Markerr",
       "accent": "green",
       "links": [
-        {"type": "GitHub", "url": "https://github.com/faraazb/markerr"}
+        {
+          "type": "GitHub",
+          "url": "https://github.com/faraazb/markerr"
+        }
       ],
       "display": {
         "light": "../src/static/images/screenshot_markerr.png",
