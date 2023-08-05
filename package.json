@@ -15,19 +15,19 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.4",
-    "gatsby": "^5.0.1",
-    "gatsby-plugin-image": "^3.0.0",
-    "gatsby-plugin-manifest": "^5.0.0",
-    "gatsby-plugin-sass": "^6.0.0",
-    "gatsby-plugin-sharp": "^5.0.0",
-    "gatsby-source-filesystem": "^5.0.0",
-    "gatsby-transformer-json": "^5.0.0",
-    "gatsby-transformer-sharp": "^5.0.0",
+    "@headlessui/react": "^1.7.15",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-image": "^3.11.0",
+    "gatsby-plugin-manifest": "^5.11.0",
+    "gatsby-plugin-sass": "^6.11.0",
+    "gatsby-plugin-sharp": "^5.11.0",
+    "gatsby-source-filesystem": "^5.11.0",
+    "gatsby-transformer-json": "^5.11.0",
+    "gatsby-transformer-sharp": "^5.11.0",
     "include-media": "^1.4.10",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "sass": "^1.56.1",
-    "sharp": "^0.31.2"
+    "sass": "^1.63.6",
+    "sharp": "^0.31.3"
   }
 }
