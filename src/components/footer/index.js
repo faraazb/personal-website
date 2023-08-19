@@ -1,15 +1,30 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Link, graphql, useStaticQuery } from "gatsby";
 import './footer.scss';
-import data from '../../../content/data.json'
-import {githubIcon, linkedinIcon, mailIcon, paperPlaneIcon, twitterIcon} from '../icons';
-import {Link} from 'gatsby';
-import {ContactLink} from '../button';
+import { githubIcon, linkedinIcon, paperPlaneIcon, twitterIcon } from '../icons';
+import { ContactLink } from '../button';
 
 
 const Footer = () => {
     const isBrowser = typeof window !== 'undefined';
     const [isFormSubmitting, setIsFormSubmitting] = useState(false);
     const [formResponse, setFormResponse] = useState('');
+    const footerData = useStaticQuery(graphql`
+        query getFooterData {
+            data: contentJson {
+                contact {
+                    github
+                    linkedin
+                    twitter
+                }
+                contactForm {
+                    pageClipSiteKey
+                    formName
+                }
+            }
+        }
+    `)
+    const { data } = footerData;
 
     const contactFormSubmit = (event) => {
         event.preventDefault();
@@ -25,14 +40,14 @@ const Footer = () => {
                 data.contactForm.formName,
                 contactForm,
                 (error, response) => {
-                if (error) {
-                    setFormResponse('Sorry! Try again after sometime or please send an email.')
-                }
-                else if (response && response.data === 'ok') {
-                    setFormResponse('Sent!')
-                }
-                setIsFormSubmitting(false)
-            });
+                    if (error) {
+                        setFormResponse('Sorry! Try again after sometime or please send an email.')
+                    }
+                    else if (response && response.data === 'ok') {
+                        setFormResponse('Sent!')
+                    }
+                    setIsFormSubmitting(false)
+                });
         }
         else if (isBrowser && !window.hasOwnProperty('Pageclip')) {
             setFormResponse('Sorry! Your content blocker has probably blocked Pageclip (pageclip.js).');
@@ -85,10 +100,9 @@ const Footer = () => {
                 <Link className='underline-link' to={'/resume'}>Resume</Link>
             </div>
             <div className='contact-links'>
-                <ContactLink href={data.contact.mail} text='Mail' icon={mailIcon} title='E-mail'/>
-                <ContactLink href={data.contact.github} text='GitHub' icon={githubIcon}/>
-                <ContactLink href={data.contact.linkedin} text='LinkedIn' icon={linkedinIcon}/>
-                <ContactLink href={data.contact.twitter} text='Twitter' icon={twitterIcon}/>
+                <ContactLink href={data.contact.github} text='GitHub' icon={githubIcon} />
+                <ContactLink href={data.contact.linkedin} text='LinkedIn' icon={linkedinIcon} />
+                <ContactLink href={data.contact.twitter} text='Twitter' icon={twitterIcon} />
             </div>
             <span id='bye'>Until we meet again!</span>
         </footer>

@@ -10,7 +10,7 @@ module.exports = {
     siteMetadata: {
         title: `Faraaz Biyabani`,
         siteUrl: siteUrl,
-        description: `Student, aspiring software engineer`,
+        description: `Software tinkerer, Associate software engineer at Contentstack`,
         twitter: {
             card: `summary`,
             creator: `@mfaraazb`
