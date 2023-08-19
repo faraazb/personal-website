@@ -3,8 +3,6 @@
 @use "src/theme/media" as query;
 @use "./contact-form";
 
-
-
 #footer {
   font-family: var(--font-handwriting);
   padding: 40px 0;
@@ -18,7 +16,7 @@
 }
 
 #footer > * {
-  @include query.media('<=phone') {
+  @include query.media("<=phone") {
     margin-left: 40px;
     margin-right: 40px;
   }
@@ -35,7 +33,6 @@
   margin-bottom: 20px;
   font-size: 1.1rem;
 }
-
 
 .contact-links {
   font-family: var(--font-mono);

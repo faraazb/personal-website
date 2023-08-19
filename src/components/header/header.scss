@@ -1,7 +1,10 @@
 @use "~include-media/dist/include-media" as query with (
-  $breakpoints: (phone: 450px, tablet: 810px, desktop: 1024px)
+  $breakpoints: (
+    phone: 450px,
+    tablet: 810px,
+    desktop: 1024px,
+  )
 );
-
 
 #nav-header {
   //width: 100%;
@@ -12,22 +15,29 @@
   display: grid;
 
   --lr-margins: 12%;
-  @include query.media('<tablet') {
+  @include query.media("<tablet") {
     --lr-margins: 8%;
   }
-  @include query.media('>=1440px') {
+  @include query.media(">=1440px") {
     --lr-margins: 18%;
-  };
+  }
   grid-template-rows: 80px 1fr;
-  grid-template-columns: [mr] var(--lr-margins) [logo] minmax(150px, 720px) [nav] minmax(auto, 720px) [ml] var(--lr-margins);
+  grid-template-columns: [mr] var(--lr-margins) [logo] minmax(150px, 720px) [nav] minmax(
+      auto,
+      720px
+    ) [ml] var(--lr-margins);
   //centers item inline - wrt row
   align-items: center;
   justify-content: center;
   backdrop-filter: saturate(180%) blur(20px);
   background-color: var(--header-bg);
-  transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1), top 500ms ease-in-out;
+  transition:
+    background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1),
+    top 500ms ease-in-out;
   z-index: 1;
-  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0 1px 24px 0,
+    rgba(0, 0, 0, 0.08) 0 0 0 1px;
 }
 
 #nav-header.scroll-up,
@@ -47,7 +57,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  @include query.media('>1920px') {
+  @include query.media(">1920px") {
     max-width: 1440px;
   }
 }
@@ -72,7 +82,7 @@
   display: flex;
   column-gap: 20px;
   align-items: center;
-  @include query.media('<=tablet') {
+  @include query.media("<=tablet") {
     display: none;
   }
 }
@@ -111,7 +121,7 @@
 .nav-button {
   grid-column-start: nav;
   margin-left: auto;
-  @include query.media('>tablet') {
+  @include query.media(">tablet") {
     display: none;
   }
 }

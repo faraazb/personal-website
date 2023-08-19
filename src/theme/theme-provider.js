@@ -1,52 +1,46 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
-
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const defaultState = {
-    theme: '',
-    switchTheme: () => {}
-}
+  theme: "",
+  switchTheme: () => {},
+};
 
 const ThemeContext = createContext(defaultState);
 
+const ThemeProvider = ({ children }) => {
+  const isBrowser = typeof window !== "undefined";
+  const [theme, setTheme] = useState("light");
 
-const ThemeProvider = ({children}) => {
-    const isBrowser = typeof window !== 'undefined';
-    const [theme, setTheme] = useState('light');
-
-    useEffect(() => {
-        if (isBrowser) {
-            let query = window.matchMedia('(prefers-color-scheme: dark)');
-            if (query.matches) {
-                setTheme('dark');
-            }
-            else {
-                setTheme('light');
-            }
-        }
-    }, [isBrowser])
-
-    const switchTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme)
-        document.documentElement.className = newTheme;
+  useEffect(() => {
+    if (isBrowser) {
+      let query = window.matchMedia("(prefers-color-scheme: dark)");
+      if (query.matches) {
+        setTheme("dark");
+      } else {
+        setTheme("light");
+      }
     }
+  }, [isBrowser]);
 
-    return (
-        <ThemeContext.Provider value = {{
-            theme,
-            switchTheme: switchTheme
-        }}>
-            {children}
-        </ThemeContext.Provider>
-    )
-}
+  const switchTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.documentElement.className = newTheme;
+  };
+
+  return (
+    <ThemeContext.Provider
+      value={{
+        theme,
+        switchTheme: switchTheme,
+      }}
+    >
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
 const useTheme = () => useContext(ThemeContext);
 
 export default ThemeContext;
-export {
-    ThemeProvider,
-    useTheme,
-};
-
-
+export { ThemeProvider, useTheme };

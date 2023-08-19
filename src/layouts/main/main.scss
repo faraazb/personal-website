@@ -21,13 +21,13 @@ header {
   flex-direction: column;
   align-items: center;
   margin: 0 12%;
-  @include query.media('<tablet') {
+  @include query.media("<tablet") {
     margin: 0 8%;
-  };
-  @include query.media('>=1440px') {
+  }
+  @include query.media(">=1440px") {
     margin: 0 18%;
-  };
-  @include query.media('>1920px') {
+  }
+  @include query.media(">1920px") {
     max-width: 1440px;
   }
 }

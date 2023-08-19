@@ -48,7 +48,7 @@ $light-background-primary: $white;
 $light-background-secondary: #f5f5f5;
 $light-border-primary: $color-neutral-20;
 $light-button-border: #364346;
-$light-theme-hover: rgba(0, 0, 0, 0.10);
+$light-theme-hover: rgba(0, 0, 0, 0.1);
 $light-theme-icon-container-hover: #e6e6e6;
 
 //dark theme
@@ -58,5 +58,5 @@ $dark-background-primary: #1c1b22;
 $dark-background-secondary: #302c38;
 $dark-border-primary: $color-neutral-20;
 $dark-button-border: #f5f5f5;
-$dark-theme-hover: rgba(255, 255, 255, 0.10);
-$dark-theme-icon-container-hover: #3b3842
+$dark-theme-hover: rgba(255, 255, 255, 0.1);
+$dark-theme-icon-container-hover: #3b3842;

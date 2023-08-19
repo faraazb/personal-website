@@ -15,11 +15,14 @@
 
   --gap-count: calc(var(--grid-column-count) - 1);
   --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
-  --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+  --grid-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--grid-column-count)
+  );
 
-  grid-template-columns: repeat(auto-fill,
-          minmax(max(var(--grid-item--min-width),
-          var(--grid-item--max-width)), 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+  );
   grid-gap: 15px var(--grid-layout-gap);
 
   list-style: none;

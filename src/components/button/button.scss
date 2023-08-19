@@ -1,5 +1,9 @@
 @use "~include-media/dist/include-media" as query with (
-  $breakpoints: (phone: 450px, tablet: 810px, desktop: 1024px)
+  $breakpoints: (
+    phone: 450px,
+    tablet: 810px,
+    desktop: 1024px,
+  )
 );
 
 .button-link {
@@ -14,7 +18,7 @@
 }
 
 .contact-link-label {
-  @include query.media('<=phone') {
+  @include query.media("<=phone") {
     display: none;
   }
 }
@@ -36,7 +40,7 @@
   background-color: var(--cyan-10);
   border: 1px solid var(--cyan-20);
   border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
   box-sizing: border-box;
   color: var(--text-primary);
   cursor: pointer;
@@ -46,12 +50,14 @@
   outline: none;
   outline: 0;
   padding: 10px 25px;
-  @include query.media('<=tablet') {
+  @include query.media("<=tablet") {
     padding: 10px 20px;
   }
   text-align: center;
   transform: translateY(0);
-  transition: transform 150ms, box-shadow 150ms;
+  transition:
+    transform 150ms,
+    box-shadow 150ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -59,10 +65,9 @@
 
 .accent-button:hover:not(:disabled) {
   background-color: var(--cyan-20);
-  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
   transform: translateY(-2px);
 }
-
 
 .accent-button:focus {
   outline: 3px solid #4369a8;
@@ -82,7 +87,6 @@
   box-shadow: 10px 10px 0 var(--green-40);
 }
 
-
 // Pink accent
 .accent-button.pink {
   background-color: var(--pink-10);
@@ -97,7 +101,6 @@
   box-shadow: 10px 10px 0 var(--pink-30);
 }
 
-
 // Yellow accent
 .accent-button.yellow {
   background-color: var(--yellow-10);
@@ -111,4 +114,3 @@
 .card.yellow {
   box-shadow: 10px 10px 0 var(--yellow-30);
 }
-

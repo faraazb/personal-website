@@ -1,6 +1,5 @@
 @use "src/theme/media" as query;
 
-
 .footnote {
   color: var(--text-primary);
   text-align: center;
@@ -9,8 +8,8 @@
 
 .contact-container {
   width: 45%;
-  @include query.media('<=phone') {
-    width: 90%
+  @include query.media("<=phone") {
+    width: 90%;
   }
   max-width: 600px;
   display: flex;
@@ -43,7 +42,8 @@
 }
 
 .form-item {
-  > textarea, input {
+  > textarea,
+  input {
     font-size: 14px;
     -webkit-appearance: none;
     outline: none;
@@ -51,7 +51,8 @@
     border: 0.1rem solid var(--border-primary);
     border-radius: 2px;
   }
-  > textarea:focus-visible, input:focus-visible {
+  > textarea:focus-visible,
+  input:focus-visible {
     outline: 0.15rem solid var(--cyan-10);
   }
   > textarea {
@@ -73,7 +74,6 @@
   justify-content: center;
   column-gap: 0.45rem;
 }
-
 
 .loader {
   width: 25px;
