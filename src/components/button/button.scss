@@ -13,6 +13,24 @@
   gap: 10px;
 }
 
+.contact-link-label {
+  @include query.media('<=phone') {
+    display: none;
+  }
+}
+
+.contact-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  column-gap: 3px;
+}
+
+.contact-link svg {
+  width: 20px;
+}
+
 .accent-button {
   height: 100%;
   background-color: var(--cyan-10);
@@ -93,3 +111,4 @@
 .card.yellow {
   box-shadow: 10px 10px 0 var(--yellow-30);
 }
+

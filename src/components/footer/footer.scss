@@ -1,8 +1,6 @@
-@use "src/components/variables.scss" as *;
-@use "src/components/theme.scss";
-@use "~include-media/dist/include-media" as query with (
-  $breakpoints: (phone: 450px, tablet: 810px, desktop: 1024px)
-);
+// @use "src/components/variables.scss" as *;
+// @use "src/components/theme.scss";
+@use "src/theme/media" as query;
 @use "./contact-form";
 
 
@@ -44,24 +42,6 @@
   display: flex;
   flex-direction: row;
   column-gap: 20px;
-}
-
-.contact-link-label {
-  @include query.media('<=phone') {
-    display: none;
-  }
-}
-
-.contact-link {
-  text-decoration: none;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  column-gap: 3px;
-}
-
-.contact-link svg {
-  width: 20px;
 }
 
 .contact-link svg.linkedin {

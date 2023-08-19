@@ -1,11 +1,11 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import './card.scss';
-import {LinkButton} from "./link";
+import {LinkButton} from "../button";
 import {GatsbyImage} from "gatsby-plugin-image";
-import ThemeContext from "./ThemeContext";
+import { useTheme } from '../../theme/theme-provider';
 
 const Card = (props) => {
-    const {theme} = useContext(ThemeContext);
+    const {theme} = useTheme();
     const {accent, title, description, links, display} = props;
 
     const {light, dark} = display;

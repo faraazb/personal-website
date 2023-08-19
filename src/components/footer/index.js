@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './footer.scss';
-import data from '../../content/data.json'
-import {githubIcon, linkedinIcon, mailIcon, paperPlaneIcon, twitterIcon} from './icons';
+import data from '../../../content/data.json'
+import {githubIcon, linkedinIcon, mailIcon, paperPlaneIcon, twitterIcon} from '../icons';
 import {Link} from 'gatsby';
-import {ContactLink} from './link';
+import {ContactLink} from '../button';
 
 
 const Footer = () => {

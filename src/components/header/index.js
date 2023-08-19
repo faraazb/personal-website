@@ -1,15 +1,15 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './header.scss';
 import {Link} from 'gatsby';
-import {LinkWrapper} from './link';
+import {LinkWrapper} from '../button';
 import {Menu} from '@headlessui/react';
-import {darkThemeIcon, hamburgerIcon, lightThemeIcon, logo} from "./icons";
-import ThemeContext from "./ThemeContext";
+import {darkThemeIcon, hamburgerIcon, lightThemeIcon, logo} from "../icons";
+import { useTheme } from '../../theme/theme-provider';
 
 
 const Header = () => {
     const isBrowser = typeof window !== 'undefined';
-    const {theme, switchTheme} = useContext(ThemeContext);
+    const {theme, switchTheme} = useTheme();
     const [scrollDirection, setScrollDirection] = useState('');
 
     let supportPageOffset, isCSS1Compat;

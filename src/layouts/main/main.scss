@@ -1,6 +1,6 @@
-@use "~include-media/dist/include-media" as query with (
-  $breakpoints: (phone: 450px, tablet: 810px, desktop: 1024px)
-);
+@use "src/theme/theme";
+@use "src/theme/base";
+@use "src/theme/media" as query;
 
 .layout {
   display: flex;
@@ -24,16 +24,10 @@ header {
   @include query.media('<tablet') {
     margin: 0 8%;
   };
-  //@include query.media('>=tablet') {
-  //  margin: 0 12%;
-  //};
   @include query.media('>=1440px') {
-    //width: 100%;
-    //width: 70%;
     margin: 0 18%;
   };
   @include query.media('>1920px') {
-    //margin: 0 22%;
     max-width: 1440px;
   }
 }

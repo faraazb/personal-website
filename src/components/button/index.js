@@ -1,6 +1,7 @@
 import React, {forwardRef} from 'react';
 import {Link} from 'gatsby';
-import {githubIcon, globeIcon, mailIcon, youtubeIcon} from './icons';
+import {githubIcon, globeIcon, mailIcon, youtubeIcon} from '../icons';
+import "./button.scss";
 
 
 const LinkWrapper = forwardRef((props, ref) => {
@@ -53,7 +54,7 @@ const LinkButton = (props) => {
 const ContactLink = (props) => {
     const {href, text, icon, title} = props
     return (
-        <a className='contact-link underline-link' href={href} target='_blank' rel='noreferrer' title={title || text}>
+        <a className='underline-link contact-link' href={href} target='_blank' rel='noreferrer' title={title || text}>
             {icon && icon}<span className='contact-link-label'>{text}</span>
         </a>
     )

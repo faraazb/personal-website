@@ -1,28 +1,38 @@
 import React from "react";
-import Layout from "../components/layout";
+import { graphql } from "gatsby";
+import { Seo } from "../../components/seo";
 import "./resume.scss";
-import data from "../../content/data.json"
-import {Seo} from "../components/seo";
 
 
-const Resume = () => {
+const Resume = ({ data }) => {
+    const { content } = data;
     return (
-        <Layout>
+        <>
             <div className='resume-container'>
                 <div className='resume'>
                     <iframe
                         id='resume-iframe'
                         title='Resume'
-                        src={data.resume.embedUrl}
+                        src={content.resume.embedUrl}
                         allow='autoplay'>
                     </iframe>
                 </div>
             </div>
-        </Layout>
+        </>
     )
 }
 
 export default Resume;
+
+export const contentQuery = graphql`
+    query getContent {
+        content: contentJson {
+            resume {
+                embedUrl
+            }
+        }
+    }
+`
 
 export const Head = () => {
     return (

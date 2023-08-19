@@ -1,4 +1,4 @@
-@use "~include-media/dist/include-media" as query;
+@use "src/theme/media" as query;
 
 .home-container {
   height: 100vh;
@@ -34,6 +34,10 @@
     border-radius: 50%;
     border-style: dashed;
   }
+}
+
+.profile-picture__container {
+  height: 100%;
 }
 
 .profile-picture {

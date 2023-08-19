@@ -1,12 +1,12 @@
 import * as React from "react"
+import { LinkWrapper } from "../../components/button";
+import {Seo} from "../../components/seo";
 import './404.scss';
-import Layout from "../components/layout";
-import {Seo} from "../components/seo";
 
 
 const NotFoundPage = () => {
   return (
-      <Layout>
+      <>
           <div id='not-found'>
               <div className='not-found-content'>
                   <div className='header-1 hero-header'>
@@ -17,13 +17,19 @@ const NotFoundPage = () => {
               <div className='not-found-links-container'>
                   Try these links instead
                   <div className='footer-nav-links'>
-                      <a className='underline-link' href={'/#hello'}>About</a>
-                      <a className='underline-link' href={'/#projects'}>Projects</a>
-                      <a className='underline-link' href={'/resume'}>Resume</a>
+                    <LinkWrapper className='underline-link' href={'/#hello'}>
+                        About
+                    </LinkWrapper>
+                    <LinkWrapper className='underline-link' href={'/#projects'}>
+                        Projects
+                    </LinkWrapper>
+                    <LinkWrapper className='underline-link' href={'/resume'}>
+                        Resume
+                    </LinkWrapper>
                   </div>
               </div>
           </div>
-      </Layout>
+      </>
   )
 }
 

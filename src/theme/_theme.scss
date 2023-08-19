@@ -1,4 +1,5 @@
 @use "./variables.scss" as *;
+@use "./typography.scss" as *;
 
 @mixin light-theme {
   color-scheme: light;

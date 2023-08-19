@@ -1,0 +1,10 @@
+@use "~include-media/dist/include-media" as query with (
+    $breakpoints: (phone: 450px, tablet: 810px, desktop: 1024px)
+);
+
+// a re-export of include-media with custom breakpoints
+@mixin media($conditions...) {
+  @include query.media($conditions...) {
+    @content;
+  }
+}

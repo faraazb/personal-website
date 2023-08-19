@@ -1,8 +1,3 @@
-@use "src/components/variables.scss" as *;
-@use "src/components/theme.scss";
-@use "./button";
-
-
 .card {
   display: flex;
   flex-direction: column;
