@@ -55,18 +55,30 @@
   ],
   "experiences": [
     {
-      "role": "Associate Software Engineering Intern",
-      "duration": "January 2023 - Present",
       "company": "Contentstack",
       "companyLink": "https://www.contentstack.com",
-      "companyLogo": "../src/static/images/contentstack.jpg"
+      "companyLogo": "../src/static/images/contentstack.jpg",
+      "roles": [
+        {
+          "title": "Associate Software Engineer",
+          "duration": "July 2023 - Present"
+        },
+        {
+          "title": "Associate Software Engineering Intern",
+          "duration": "January 2023 - July 2023"
+        }
+      ]
     },
     {
-      "role": "Web Development Intern",
-      "duration": "August 2022 - January 2023",
       "company": "Yunometa",
       "companyLink": "https://www.yunometa.com",
-      "companyLogo": "../src/static/images/yunometa.png"
+      "companyLogo": "../src/static/images/yunometa.png",
+      "roles": [
+        {
+          "title": "Web Development Intern",
+          "duration": "August 2022 - January 2023"
+        }
+      ]
     }
   ],
   "achievements": [

@@ -8,42 +8,38 @@ import {ContactLink} from './link';
 
 const Footer = () => {
     const isBrowser = typeof window !== 'undefined';
-    const [contactForm, setContactForm] = useState({name: '', email: '', message: ''});
-    const [submitButton, setSubmitButton] = useState(paperPlaneIcon);
-    const [isSubmitDisabled, setSubmitDisabled] = useState(false)
-    const [response, setResponse] = useState('');
-
-    const contactFormFieldChange = (event) => {
-        setContactForm({...contactForm, [event.target.name]: event.target.value});
-    }
+    const [isFormSubmitting, setIsFormSubmitting] = useState(false);
+    const [formResponse, setFormResponse] = useState('');
 
     const contactFormSubmit = (event) => {
         event.preventDefault();
+        const contactForm = {};
+        const formData = new FormData(event.target)
+        for (const [name, value] of formData) {
+            contactForm[name] = value
+        }
         if (isBrowser && window.hasOwnProperty('Pageclip')) {
-            setSubmitDisabled(true)
-            setSubmitButton(<span className='loader'></span>);
+            setIsFormSubmitting(true)
             window.Pageclip.send(
                 data.contactForm.pageClipSiteKey,
                 data.contactForm.formName,
                 contactForm,
                 (error, response) => {
                 if (error) {
-                    setResponse('Sorry! Try again after sometime or please send an email.')
+                    setFormResponse('Sorry! Try again after sometime or please send an email.')
                 }
                 else if (response && response.data === 'ok') {
-                    setResponse('Sent!')
+                    setFormResponse('Sent!')
                 }
-                setSubmitButton(paperPlaneIcon);
-                setSubmitDisabled(false);
+                setIsFormSubmitting(false)
             });
         }
         else if (isBrowser && !window.hasOwnProperty('Pageclip')) {
-            setResponse('Sorry! Your content blocker has probably blocked Pageclip (pageclip.js).');
-            setSubmitButton(paperPlaneIcon);
-            setSubmitDisabled(false);
+            setFormResponse('Sorry! Your content blocker has probably blocked Pageclip (pageclip.js).');
+            setIsFormSubmitting(false)
         }
         setTimeout(() => {
-            setResponse('')
+            setFormResponse('')
         }, 15000);
     }
 
@@ -58,32 +54,30 @@ const Footer = () => {
                     <div className='form-item input-field'>
                         <label htmlFor='name'>Name</label>
                         <input
-                            id="name" type='text' name='name' value={contactForm.name}
-                            onChange={contactFormFieldChange} required placeholder='Your name'
+                            id="name" type='text' name='name' required placeholder='Your name'
                         />
                     </div>
                     <div className='form-item input-field'>
                         <label htmlFor='email'>E-mail</label>
                         <input
-                            id="email" type='email' name='email' value={contactForm.email}
-                            onChange={contactFormFieldChange} required placeholder='Your e-mail ID'
+                            id="email" type='email' name='email' required placeholder='Your email'
                         />
                     </div>
                     <div className='form-item input-field message'>
                         <label htmlFor='message'>Message</label>
                         <textarea
-                            id="message" name='message' value={contactForm.message}
-                            onChange={contactFormFieldChange} required
+                            id="message" name='message' required
                             placeholder='Your message...'
                         />
                     </div>
                     <div className='form-item submit'>
-                        <button className='accent-button submit' type='submit' disabled={isSubmitDisabled}>
-                            {submitButton}<span>Send</span>
+                        <button className='accent-button submit' type='submit' disabled={isFormSubmitting === true}>
+                            {isFormSubmitting ? <span className='loader'></span> : paperPlaneIcon}
+                            <span>Send</span>
                         </button>
                     </div>
                 </form>
-                <span className='contact-form-response'>{response}</span>
+                <span className='contact-form-response'>{formResponse}</span>
             </div>
             <div className='footer-nav-links'>
                 <Link className='underline-link' to={'/#about'}>About</Link>

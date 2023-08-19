@@ -68,14 +68,12 @@
 }
 
 .form-item.submit > .accent-button {
-  display: grid;
-  grid-template-columns: 25px 1fr;
-  place-content: center;
+  display: flex;
   align-items: center;
-  width: 140px;
-  height: 47px;
-  overflow: auto;
+  justify-content: center;
+  column-gap: 0.45rem;
 }
+
 
 .loader {
   width: 25px;

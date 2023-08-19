@@ -80,10 +80,10 @@ const IndexPage = ({ data }) => {
 					<h2 className="header-2">Experience</h2>
 					<div className="experiences">
 						{data.content.experiences.map((experience) => {
-							const { role, duration, company, companyLink, companyLogo } =
+							const { roles, company, companyLink, companyLogo } =
 								experience;
 							return (
-								<div className="experience" key={role}>
+								<div className="experience" key={company}>
 									<div className="company-icon-container">
 										<a
 											href={companyLink}
@@ -99,24 +99,29 @@ const IndexPage = ({ data }) => {
 											/>
 										</a>
 									</div>
-									<div className="description">
-										<div className="role">{role}</div>
-										<div className="details">
-											<a
-												href={companyLink}
-												target="_blank"
-												rel="noreferrer"
-											>
-												<BuildingIcon className="icon-h" />
-												<span className="company-link underline-link">
-													{company}
-												</span>
-											</a>
-											<div>
-												<DateRangeIcon className="icon-h company-duration" />
-												<span>{duration}</span>
-											</div>
-										</div>
+									<div className="experience__information description">
+										<a
+											className="company-link"
+											href={companyLink}
+											target="_blank"
+											rel="noreferrer"
+										>
+											<BuildingIcon className="icon-h" />
+											<span className="company-link__title underline-link">
+												{company}
+											</span>
+										</a>
+										<ul className="roles">
+											{roles.map(({title, duration}, index) => (
+												<li className="role" key={`${title}-${index}`}>
+													<div className="role__title">{title}</div>
+													<div className="role__duration">
+														<DateRangeIcon className="icon-h" />
+														<span>{duration}</span>
+													</div>
+												</li>
+											))}
+										</ul>
 									</div>
 								</div>
 							);
@@ -139,8 +144,8 @@ const IndexPage = ({ data }) => {
 											/>
 										</div>
 									</a>
-									<div className="description">
-										<div className="role">{title}</div>
+									<div className="role description">
+										<div className="role__title">{title}</div>
 										<div className="details">{description}</div>
 									</div>
 								</div>
@@ -189,8 +194,10 @@ export const contentQuery = graphql`
 				mono
 			}
 			experiences {
-				role
-				duration
+				roles {
+					title
+					duration
+				}
 				company
 				companyLink
 				companyLogo {

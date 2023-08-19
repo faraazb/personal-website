@@ -1,9 +1,7 @@
 @use "src/components/typography.scss" as *;
 @use "src/components/variables.scss" as *;
 @use "src/components/theme.scss";
-@use "~include-media/dist/include-media" as query with (
-  $breakpoints: (phone: 450px, tablet: 810px, desktop: 1024px)
-);
+@use "~include-media/dist/include-media" as query with ($breakpoints: (phone: 450px, tablet: 810px, desktop: 1024px));
 @use "./about";
 @use "./skills";
 @use "./projects";
@@ -15,9 +13,11 @@ html {
     height: -webkit-fill-available;
     height: fill-available;
     --section-margin-top: 150px;
+
     @include query.media('<=tablet') {
         --section-margin-top: 100px;
     }
+
     scroll-behavior: smooth;
 }
 
@@ -42,7 +42,12 @@ body {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-sans-serif);
 }
 
@@ -56,7 +61,8 @@ a {
     color: var(--text-primary)
 }
 
-input, textarea {
+input,
+textarea {
     font-family: var(--font-sans-serif);
     font-weight: 400;
 }
@@ -66,9 +72,11 @@ input, textarea {
     margin-bottom: 20px;
     margin-top: 0;
     font-size: 3.8rem;
+
     @include query.media('<=phone') {
         font-size: 3rem;
     }
+
     font-weight: 500;
 }
 
@@ -146,18 +154,20 @@ input, textarea {
     grid-column-gap: 50px;
 }
 
-.experiences, .achievements {
+.experiences,
+.achievements {
     display: flex;
     flex-direction: column;
     row-gap: 35px;
 }
 
-.experience, .achievement {
+.experience,
+.achievement {
     display: flex;
     column-gap: 20px;
 }
 
-.achievement > a {
+.achievement>a {
     height: fit-content;
 }
 
@@ -181,23 +191,33 @@ input, textarea {
     border-radius: 5px;
 }
 
-.role {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.details {
+.roles {
+    margin: 0;
+    padding: 0.4rem;
     color: var(--text-secondary);
     display: flex;
     flex-direction: column;
-    row-gap: 12px;
-    //column-gap: 4px;
+    row-gap: 1rem;
+    // column-gap: 4px;
     //align-items: center;
 }
 
-.details > * {
+.role {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.role__title {
+    font-size: 1.2rem;
+    // margin-bottom: 10px;
+}
+
+.role__duration {
+    font-size: 1rem;
     display: flex;
     column-gap: 8px;
+    align-items: center;
 }
 
 .icon-h {
@@ -205,13 +225,25 @@ input, textarea {
     fill: var(--text-secondary);
 }
 
-.icon-h.company-duration {
-    height: 20px;
-    width: 20px;
+.role__duration>.icon-h {
+    height: 18px;
+    width: 18px;
     margin-left: -3px;
 }
 
 .company-link {
+    display: flex;
+    column-gap: 8px;
+}
+
+.company-link__title {
     // to offset the padding added by .underline-link
     margin-bottom: -2px;
+}
+
+.experience__information {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 5px;
 }
