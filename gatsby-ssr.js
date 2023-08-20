@@ -1,4 +1,5 @@
 const React = require("react");
+const Layout = require("./src/layouts/main").default;
 
 exports.onRenderBody = ({ setPostBodyComponents, setHtmlAttributes }) => {
   setHtmlAttributes({ lang: "en" });
@@ -20,3 +21,7 @@ exports.onRenderBody = ({ setPostBodyComponents, setHtmlAttributes }) => {
     ]);
   }
 };
+
+exports.wrapPageElement = ({element}) => {
+  return <Layout>{element}</Layout>
+}
