@@ -22,10 +22,9 @@
     --lr-margins: 18%;
   }
   grid-template-rows: 80px 1fr;
-  grid-template-columns: [mr] var(--lr-margins) [logo] minmax(150px, 720px) [nav] minmax(
-      auto,
-      720px
-    ) [ml] var(--lr-margins);
+  grid-template-columns:
+    [mr] var(--lr-margins) [logo] minmax(150px, 720px) [nav] minmax(auto, 720px)
+    [ml] var(--lr-margins);
   //centers item inline - wrt row
   align-items: center;
   justify-content: center;
