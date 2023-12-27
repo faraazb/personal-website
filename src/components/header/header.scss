@@ -1,10 +1,4 @@
-@use "~include-media/dist/include-media" as query with (
-  $breakpoints: (
-    phone: 450px,
-    tablet: 810px,
-    desktop: 1024px,
-  )
-);
+@use "@styles/include-media" as query;
 
 #nav-header {
   //width: 100%;

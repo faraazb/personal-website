@@ -1,0 +1,47 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import About from "@sections/about/About.astro";
+import Skills from "@sections/skills/Skills.astro";
+import Experience from "@sections/experience/Experience.astro";
+
+const entry = await getEntry({ collection: "pages", id: "home" });
+
+const { sections } = entry.data;
+---
+
+<Layout title="Hello world">
+  <About data={sections.about} />
+  <Skills data={sections.skills} />
+  <div class="container">
+    <Experience data={sections.experience} />
+  </div>
+</Layout>
+
+<style lang="scss" is:global>
+  .container {
+    width: 100%;
+    margin-top: var(--section-margin-top);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(450px, 100%), 1fr));
+    grid-row-gap: var(--section-margin-top);
+    grid-column-gap: 50px;
+  }
+
+  .experiences,
+  .achievements {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+  }
+
+  .experience,
+  .achievement {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  .achievement > a {
+    height: fit-content;
+  }
+</style>

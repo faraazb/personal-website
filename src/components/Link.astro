@@ -1,0 +1,99 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import classnames from "classnames";
+import { Icon } from "./Icon.tsx";
+import type { Name as IconName } from "@icons/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  type?: "primary" | "secondary";
+  accent?: "pink" | "yellow" | "green";
+  icon: IconName;
+}
+
+const {
+  type = "primary",
+  accent,
+  icon,
+  href,
+  class: classProp,
+  ...rest
+} = Astro.props;
+const className = classnames("link", classProp, {
+  "link--primary": type === "primary" && !accent,
+  "link--green": accent === "green",
+  "link--pink": accent === "pink",
+  "link--yellow": accent === "yellow",
+});
+---
+
+<a href={href ?? ""} class={className} {...rest}>
+  <Icon name={icon} />
+  <slot />
+</a>
+
+<style lang="scss">
+  .link {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 100%;
+    outline: none;
+    padding: 10px 25px;
+    text-align: center;
+    touch-action: manipulation;
+    transform: translateY(0);
+    transition:
+      transform 0.15s,
+      box-shadow 0.15s;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+
+    &--primary {
+      background-color: var(--cyan-10);
+      border: 1px solid var(--cyan-20);
+
+      &:hover:not(:disabled) {
+        background-color: var(--cyan-20);
+        box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+        transform: translateY(-2px);
+      }
+    }
+
+    &--green {
+      background-color: var(--green-10);
+      border: 1px solid var(--green-20);
+
+      &:hover {
+        background-color: var(--green-30);
+      }
+    }
+
+    &--pink {
+      background-color: var(--pink-10);
+      border: 1px solid var(--pink-20);
+
+      &:hover {
+        background-color: var(--pink-20);
+      }
+    }
+
+    &--yellow {
+      background-color: var(--yellow-10);
+      border: 1px solid var(--yellow-20);
+
+      &:hover {
+        background-color: var(--yellow-20);
+      }
+    }
+
+    &:focus {
+      outline: 3px solid #4369a8;
+    }
+  }
+</style>

@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+import Link from "@components/Link.astro";
+import type { About } from "./about.schema";
+
+interface Props {
+  data: About;
+}
+
+const { data } = Astro.props;
+const { title, bio, links, picture } = data;
+---
+
+<section id="about" class="home-container">
+  <div id="home">
+    <div class="hello">
+      <h1 class="header-1">{title}</h1>
+      <p class="subtitle-1">{bio}</p>
+      <div class="links">
+        <Link icon="mail" href={"#contact"}>Get in touch</Link>
+        {
+          links.map(({ title, url, icon }) => (
+            <Link
+              class="link--icon"
+              type="secondary"
+              href={url}
+              title={title}
+              icon={icon}
+              target="_blank"
+              rel="noreferrer"
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="photo">
+      <Image src={picture.src} alt={picture.alt} class="profile-picture" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss" is:global>
+  @use "@styles/include-media" as query;
+
+  .home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include query.media("<=phone") {
+      // Exclude the header area, on larger screens, center aligning works fine
+      margin-top: 10%;
+    }
+  }
+
+  #home {
+    display: grid;
+    grid-template-columns: 0.95fr 250px;
+    grid-column-gap: 25px;
+    place-content: center;
+    @include query.media("<=tablet") {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .photo {
+    // height: 100px;
+    // width: 100px;
+    border: 1px solid var(--border-primary);
+    padding: 15px;
+    @include query.media("<=tablet") {
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 150px;
+      grid-row-start: 1;
+      grid-column-start: 1;
+      border-radius: 50%;
+      border-style: dashed;
+    }
+  }
+
+  .profile-picture {
+    height: 100%;
+    width: 100%;
+    @include query.media("<=tablet") {
+      border-radius: 50%;
+    }
+  }
+
+  .hello > .subtitle-1 {
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  .hello > .links {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .link--icon .icon {
+    width: 25px;
+  }
+
+  .hello > .links > a > .accent-button {
+    border-radius: 20px;
+    border: 1px solid var(--text-primary);
+    box-shadow: 0 3px 0 var(--text-primary);
+  }
+
+  .link.link--icon {
+    padding: 0;
+    height: auto;
+  }
+</style>

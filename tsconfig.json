@@ -1,0 +1,30 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": "F:/Projects/faraazbiyabani.me",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@icons/*": [
+        "./src/icons/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@sections/*": [
+        "./src/sections/*"
+      ],
+      "@content/*": [
+        "./src/content/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  }
+}

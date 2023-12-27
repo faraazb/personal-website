@@ -1,0 +1,98 @@
+{
+  "sections": {
+    "about": {
+      "title": "Hello!",
+      "bio": "I am Faraaz Biyabani, a software tinkerer and associate software engineer at Contentstack. With a passion for crafting practical wonders, I thrive on exploring new tools, frameworks, and contributing to open source projects.",
+      "picture": {
+        "src": "../../assets/images/faraaz.png",
+        "alt": "A picture of Faraaz"
+      },
+      "links": [
+        {
+          "title": "GitHub",
+          "icon": "github",
+          "url": "https://github.com/faraazb"
+        },
+        {
+          "title": "LinkedIn",
+          "icon": "linkedin",
+          "url": "https://linkedin.com/in/faraazb"
+        }
+      ]
+    },
+    "skills": {
+      "heading": "Skills",
+      "skills": [
+        {
+          "title": "Python",
+          "icon": "javascript"
+        },
+        {
+          "title": "JavaScript",
+          "icon": "javascript"
+        },
+        {
+          "title": "Java",
+          "icon": "javascript"
+        },
+        {
+          "title": "Git",
+          "icon": "javascript"
+        },
+        {
+          "title": "SQL",
+          "icon": "javascript",
+          "mono": true
+        },
+        {
+          "title": "GraphQL",
+          "icon": "javascript"
+        },
+        {
+          "title": "ReactJS",
+          "icon": "javascript"
+        },
+        {
+          "title": "Flask",
+          "icon": "javascript",
+          "mono": true
+        }
+      ]
+    },
+    "experience": {
+      "heading": "Experience",
+      "experiences": [
+        {
+          "company": {
+            "title": "Contentstack",
+            "url": "https://www.contentstack.com",
+            "logo": "../../assets/images/contentstack.jpg"
+          },
+          "roles": [
+            {
+              "title": "Associate Software Engineer",
+              "duration": "July 2023 - Present"
+            },
+            {
+              "title": "Associate Software Engineering Intern",
+              "duration": "January 2023 - July 2023"
+            }
+          ]
+        },
+        {
+          "company": {
+            "title": "Yunometa",
+            "url": "https://www.yunometa.com",
+            "logo": "../../assets/images/yunometa.png"
+          },
+          "roles": [
+            {
+              "title": "Web Development Intern",
+              "duration": "August 2023 - January 2023"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

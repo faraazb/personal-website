@@ -1,0 +1,141 @@
+---
+import { Image } from "astro:assets";
+import { Building, DateRange } from "@icons/index";
+import type { Experience } from "./experience.schema";
+
+interface Props {
+  data: Experience;
+}
+
+const { data } = Astro.props;
+const { heading, experiences } = data;
+---
+
+<section id="experience">
+  <h2 class="header-2">{heading}</h2>
+  <div class="experiences">
+    {
+      experiences.map((experience) => {
+        const { roles, company } = experience;
+        return (
+          <div class="experience">
+            <div class="company-icon-container">
+              <a href={company.url} target="_blank" rel="noreferrer">
+                <Image
+                  src={company.logo}
+                  class="company-icon"
+                  alt={`${company.title} logo`}
+                />
+              </a>
+            </div>
+            <div class="experience__information description">
+              <a
+                class="company-link"
+                href={company.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Building class="icon-h" />
+                <span class="company-link__title underline-link">
+                  {company.title}
+                </span>
+              </a>
+              <ul class="roles">
+                {roles.map(({ title, duration }) => (
+                  <li class="role">
+                    <div class="role__title">{title}</div>
+                    <div class="role__duration">
+                      <DateRange class="icon-h" />
+                      <span>{duration}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style lang="scss">
+  .company-icon-container {
+    height: 50px;
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--background-secondary);
+    box-shadow:
+      rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .company-icon-container:hover {
+    background-color: var(--icon-container-hover);
+  }
+
+  .company-icon {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .roles {
+    margin: 0;
+    padding: 0.4rem;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    // column-gap: 4px;
+    //align-items: center;
+  }
+
+  .role {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  .role__title {
+    font-size: 1.2rem;
+    // margin-bottom: 10px;
+  }
+
+  .role__duration {
+    font-size: 1rem;
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+  }
+
+  .icon-h {
+    height: 16px;
+    fill: var(--text-secondary);
+  }
+
+  .role__duration > .icon-h {
+    height: 18px;
+    width: 18px;
+    margin-left: -3px;
+  }
+
+  .company-link {
+    display: flex;
+    column-gap: 8px;
+  }
+
+  .company-link__title {
+    // to offset the padding added by .underline-link
+    margin-bottom: -2px;
+  }
+
+  .experience__information {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 5px;
+  }
+</style>
