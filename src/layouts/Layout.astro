@@ -2,10 +2,10 @@
 import { ViewTransitions } from "astro:transitions";
 import { Header } from "@components/header";
 interface Props {
-  title: string;
+  title?: string;
 }
 
-const { title } = Astro.props;
+const { title = "Faraaz Biyabani" } = Astro.props;
 ---
 
 <!doctype html>

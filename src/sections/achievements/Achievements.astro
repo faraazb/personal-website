@@ -1,73 +1,46 @@
 ---
-import type { Skills } from "./skills.schema";
-import { Icon } from "@components/Icon";
-import classnames from "classnames";
+import { Image } from "astro:assets";
+import type { Achievements } from "./achievements.schema";
 
 interface Props {
-  data: Skills;
+  data: Achievements;
 }
 
 const { data } = Astro.props;
-const { heading, skills } = data;
+const { heading, achievements } = data;
 ---
 
-<section id="skills" class="skills-container">
+<section id="achievements">
   <h2 class="header-2">{heading}</h2>
-  <ul class="skills">
+  <div class="achievements">
     {
-      skills.map(({ title, icon, mono }) => {
+      achievements.map(({ title, description, logo, url }) => {
         return (
-          <li class="skill">
-            <span class={classnames("li-icon", { mono: mono })}>
-              <Icon name={icon} />
-            </span>
-            {title}
-          </li>
+          <div class="achievement">
+            <div class="company-icon-container">
+              <a href={url} target="_blank" rel="noreferrer">
+                <Image src={logo} alt={`${title} logo`} class="company-icon" />
+              </a>
+            </div>
+            <div class="achievement__description">
+              <div class="achievement__title">{title}</div>
+              <div class="achievement__details">{description}</div>
+            </div>
+          </div>
         );
       })
     }
-  </ul>
+  </div>
 </section>
 
 <style lang="scss">
-  .skills-container {
-    width: 100%;
-  }
-
-  .skills {
-    //width: 100%;
-    display: grid;
-    //place-items: center;
-    align-items: center;
-    //justify-items: center;
-
-    --grid-layout-gap: 30px;
-    --grid-column-count: 4;
-    --grid-item--min-width: 100px;
-
-    --gap-count: calc(var(--grid-column-count) - 1);
-    --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
-    --grid-item--max-width: calc(
-      (100% - var(--total-gap-width)) / var(--grid-column-count)
-    );
-
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
-    );
-    grid-gap: 15px var(--grid-layout-gap);
-
-    list-style: none;
-    font-family: var(--font-sans-serif);
-    font-weight: 500;
-    background-color: var(--background-secondary);
-    border-radius: 15px;
-    padding: 40px;
-  }
-
-  .skill {
+  .achievement__description {
     display: flex;
-    //align-items: center;
-    column-gap: 10px;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  .achievement__title {
+    font-size: 1.2rem;
   }
 </style>

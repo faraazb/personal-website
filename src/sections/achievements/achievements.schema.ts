@@ -1,17 +1,16 @@
-import { z } from "astro:content";
-import { icons } from "@icons/types";
+import { z, type SchemaContext } from "astro:content";
 
-const [firstIcon, ...otherIcons] = Object.keys(icons);
+export const achievements = ({ image }: SchemaContext) =>
+  z.object({
+    heading: z.string(),
+    achievements: z
+      .object({
+        title: z.string(),
+        description: z.string(),
+        logo: image(),
+        url: z.string(),
+      })
+      .array(),
+  });
 
-export const skills = z.object({
-  heading: z.string(),
-  skills: z
-    .object({
-      title: z.string(),
-      icon: z.enum([firstIcon, ...otherIcons]),
-      mono: z.boolean().optional(),
-    })
-    .array(),
-});
-
-export type Skills = z.infer<typeof skills>;
+export type Achievements = z.infer<ReturnType<typeof achievements>>;

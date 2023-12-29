@@ -11,6 +11,7 @@ import { Building } from "./Building";
 export const icons = {
   github: GitHub,
   linkedin: LinkedIn,
+  youtube: LinkedIn,
   mail: Mail,
   sun: Sun,
   moon: Moon,

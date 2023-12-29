@@ -93,6 +93,23 @@
           ]
         }
       ]
+    },
+    "achievements": {
+      "heading": "Achievements",
+      "achievements": [
+        {
+          "title": "Techsurf 2022 — Second Runner-up",
+          "description": "About 12,000 students participated in this annual hackathon organized by Contentstack. In the final stage, I was tasked with building a webpage annotation tool which I named Markerr.",
+          "url": "https://unstop.com/competition/techsurf-2022-contentstack-359635/case-submissions/44082?d=eyJwYWdlIjoxLCJ0ZWFtSWQiOjg4MDc5NDksImFzc29jaWF0aW9uSWQiOjIwODUwMn0=",
+          "logo": "../../assets/images/techsurf.png"
+        },
+        {
+          "title": "e-YIC 2020-21 — Bronze Prize",
+          "description": "A competition organized by e-Yantra (IIT Bombay) with a disaster management theme and about 400 participating teams from engineering institutions across India.",
+          "url": "https://eyic.e-yantra.org",
+          "logo": "../../assets/images/eyantra.png"
+        }
+      ]
     }
   }
 }

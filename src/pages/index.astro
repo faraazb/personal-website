@@ -1,21 +1,27 @@
 ---
-import { getEntry } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import About from "@sections/about/About.astro";
 import Skills from "@sections/skills/Skills.astro";
 import Experience from "@sections/experience/Experience.astro";
+import Achievements from "@sections/achievements/Achievements.astro";
+import Projects from "@sections/projects/Projects.astro";
 
 const entry = await getEntry({ collection: "pages", id: "home" });
+const projectEntries = await getCollection("projects");
+const projects = projectEntries.map((entry) => entry.data);
 
 const { sections } = entry.data;
 ---
 
-<Layout title="Hello world">
+<Layout>
   <About data={sections.about} />
   <Skills data={sections.skills} />
   <div class="container">
     <Experience data={sections.experience} />
+    <Achievements data={sections.achievements} />
   </div>
+  <Projects data={{ heading: "Projects", projects: projects }} />
 </Layout>
 
 <style lang="scss" is:global>
@@ -43,5 +49,28 @@ const { sections } = entry.data;
 
   .achievement > a {
     height: fit-content;
+  }
+
+  .company-icon-container {
+    height: 50px;
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--background-secondary);
+    box-shadow:
+      rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .company-icon-container:hover {
+    background-color: var(--icon-container-hover);
+  }
+
+  .company-icon {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
   }
 </style>

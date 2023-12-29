@@ -1,0 +1,96 @@
+---
+import { Image } from "astro:assets";
+import Link from "@components/Link.astro";
+import type { Project } from "@sections/projects/project.schema";
+
+type Props = Project;
+
+const { title, accent, picture, links, description } = Astro.props;
+---
+
+<div class={`card ${accent}`}>
+  <div class="titlebar">
+    <span class="title">{title}</span>
+  </div>
+  <div class="window">
+    <div class="display">
+      <Image src={picture.light} class="image" alt={"Project screenshot"} />
+    </div>
+    <p class="description">{description}</p>
+    <div class="links">
+      {
+        links.map(({ title, icon, url }) => {
+          return (
+            <Link
+              icon={icon}
+              accent={accent}
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {title}>
+            </Link>
+          );
+        })
+      }
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--background-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+    box-shadow: 10px 10px 0 var(--blue-10);
+    height: auto;
+    max-width: 500px;
+    min-width: 200px;
+    min-height: 400px;
+  }
+
+  .titlebar {
+    background: var(--background-secondary);
+    border-bottom: 1px solid var(--border-primary);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-family: var(--font-sans-serif);
+    font-size: 1.5rem;
+    color: var(--text-primary);
+  }
+
+  .description {
+    font-family: var(--font-sans-serif);
+    color: var(--text-primary);
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .window {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 10px;
+  }
+
+  .card > .window > .links {
+    display: flex;
+    gap: 10px;
+  }
+</style>

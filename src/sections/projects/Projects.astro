@@ -1,0 +1,55 @@
+---
+import ProjectCard from "@components/ProjectCard.astro";
+import type { Project } from "./project.schema";
+
+interface Props {
+  data: {
+    heading: string;
+    projects: Project[];
+  };
+}
+
+const { data } = Astro.props;
+const { heading, projects } = data;
+---
+
+<section id="projects" class="projects-container">
+  <h2 class="header-2">{heading}</h2>
+  <div class="projects">
+    {
+      projects.map((project) => {
+        const { accent, title, description, picture, links } = project;
+        return (
+          <ProjectCard
+            accent={accent}
+            title={title}
+            description={description}
+            links={links}
+            picture={picture}
+          />
+        );
+      })
+    }
+  </div>
+</section>
+
+<style lang="scss">
+  @use "@styles/include-media" as query;
+
+  .projects-container {
+    width: 100%;
+    margin-top: var(--section-margin-top);
+  }
+
+  .projects {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
+    grid-gap: 50px;
+  }
+
+  .project-video {
+    width: 100%;
+    height: auto;
+  }
+</style>
