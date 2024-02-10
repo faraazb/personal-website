@@ -30,7 +30,7 @@ jobs:
           node-version: 20
           package-manager: pnpm@latest
         env:
-          PUBLIC_RESUME_EMBED_URL: ${{ vars.PUBLIC_PAGECLIP_SITE_KEY }}
+          PUBLIC_RESUME_EMBED_URL: ${{ vars.PUBLIC_RESUME_EMBED_URL }}
           PUBLIC_PAGECLIP_SITE_KEY: ${{ vars.PUBLIC_PAGECLIP_SITE_KEY }}
           PUBLIC_PAGECLIP_FORM_NAME: ${{ vars.PUBLIC_PAGECLIP_FORM_NAME }}
 
