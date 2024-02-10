@@ -1,5 +1,5 @@
 ---
-title: "DCross"
+title: "DCroSS"
 picture:
   light: "../../assets/images/projects/dcross.jpg"
   dark: "../../assets/images/projects/dcross.jpg"
