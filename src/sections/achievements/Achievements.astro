@@ -18,7 +18,7 @@ const { heading, achievements } = data;
         return (
           <div class="achievement">
             <div class="company-icon-container">
-              <a href={url} target="_blank" rel="noreferrer">
+              <a class="company-link" href={url} target="_blank" rel="noreferrer">
                 <Image src={logo} alt={`${title} logo`} class="company-icon" />
               </a>
             </div>
@@ -42,5 +42,9 @@ const { heading, achievements } = data;
 
   .achievement__title {
     font-size: 1.2rem;
+  }
+
+  .achievement__details {
+    line-height: 1.3;
   }
 </style>

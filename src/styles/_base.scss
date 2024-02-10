@@ -58,6 +58,7 @@ input,
 textarea {
   font-family: var(--font-sans-serif);
   font-weight: 400;
+  padding: 0.5rem;
 }
 
 .header-1 {
@@ -90,6 +91,10 @@ textarea {
   fill: var(--text-primary);
   width: 20px;
   position: relative;
+
+  &--medium {
+    width: 25px;
+  }
 }
 
 .li-icon {
@@ -100,26 +105,68 @@ textarea {
   fill: var(--text-primary);
 }
 
-.underline-link {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-  line-height: 1;
+.accent-button {
+  height: 100%;
+  background-color: var(--cyan-10);
+  border: 1px solid var(--cyan-20);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-family: var(--font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
 
-  &.contact-link {
-    display: flex;
+  @include query.media("<=tablet") {
+    padding: 10px 20px;
   }
+
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms,
+  box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.underline-link {
-  background: linear-gradient(0deg, var(--cyan-20), var(--cyan-20)) no-repeat
-    right bottom / 0 var(--bg-h);
-  transition: background-size 350ms;
-  padding-bottom: 2px;
-  --bg-h: 4px;
+.accent-button:hover:not(:disabled) {
+  background-color: var(--cyan-20);
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
 }
 
-.underline-link:where(:hover, :focus-visible) {
-  background-size: 100% var(--bg-h);
-  background-position-x: left;
+.accent-button:focus {
+  outline: 3px solid #4369a8;
+}
+
+.accent-button.green {
+  background-color: var(--green-10);
+  border: 1px solid var(--green-20);
+}
+
+.accent-button.green:hover {
+  background-color: var(--green-30);
+}
+
+.accent-button.pink {
+  background-color: var(--pink-10);
+  border: 1px solid var(--pink-20);
+}
+
+.accent-button.pink:hover {
+  background-color: var(--pink-20);
+}
+
+.accent-button.yellow {
+  background-color: var(--yellow-10);
+  border: 1px solid var(--yellow-20);
+}
+
+.accent-button.yellow:hover {
+  background-color: var(--yellow-20);
 }

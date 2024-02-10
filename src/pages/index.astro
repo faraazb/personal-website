@@ -73,4 +73,23 @@ const { sections } = entry.data;
     border-radius: 5px;
     object-fit: cover;
   }
+
+  .company-link {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
 </style>
+
+<script>
+  import { theme } from "src/store/theme";
+
+  const setTheme = () =>
+    theme.subscribe((value: string) => {
+      document.documentElement.className = value;
+    });
+
+  setTheme();
+
+  document.addEventListener("astro:after-swap", setTheme);
+</script>

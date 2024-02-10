@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { Building, DateRange } from "@icons/index";
+import { DateRange } from "@icons/index";
+import Link from "@components/Link.astro";
 import type { Experience } from "./experience.schema";
 
 interface Props {
@@ -20,7 +21,7 @@ const { heading, experiences } = data;
         return (
           <div class="experience">
             <div class="company-icon-container">
-              <a href={company.url} target="_blank" rel="noreferrer">
+              <a class="company-link" href={company.url} target="_blank" rel="noreferrer">
                 <Image
                   src={company.logo}
                   class="company-icon"
@@ -29,17 +30,15 @@ const { heading, experiences } = data;
               </a>
             </div>
             <div class="experience__information description">
-              <a
-                class="company-link"
+              <Link
+                type="secondary"
+                icon="building"
                 href={company.url}
                 target="_blank"
                 rel="noreferrer"
               >
-                <Building class="icon-h" />
-                <span class="company-link__title underline-link">
-                  {company.title}
-                </span>
-              </a>
+                {company.title}
+              </Link>
               <ul class="roles">
                 {roles.map(({ title, duration }) => (
                   <li class="role">
@@ -66,7 +65,7 @@ const { heading, experiences } = data;
     color: var(--text-secondary);
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 0.8rem;
     // column-gap: 4px;
     //align-items: center;
   }
@@ -100,20 +99,16 @@ const { heading, experiences } = data;
     margin-left: -3px;
   }
 
-  .company-link {
-    display: flex;
-    column-gap: 8px;
-  }
 
-  .company-link__title {
-    // to offset the padding added by .underline-link
-    margin-bottom: -2px;
-  }
+  // .company-link__title {
+  //   // to offset the padding added by .underline-link
+  //   margin-bottom: -2px;
+  // }
 
   .experience__information {
     display: flex;
     flex-direction: column;
-    row-gap: 8px;
+    row-gap: 0.4rem;
     padding: 5px;
   }
 </style>

@@ -1,0 +1,192 @@
+---
+import Link from "@components/Link.astro";
+---
+
+<footer id="footer">
+  <div class="footer-nav-links">
+    <Link href={"/#about"} type="secondary">About</Link>
+    <Link href={"/#projects"} type="secondary">Projects</Link>
+    <Link href={"/resume"} type="secondary">Resume</Link>
+    <Link href={"/contact"} type="secondary">Contact</Link>
+  </div>
+  <div class="contact-links">
+    <Link
+      type="icon"
+      icon="github"
+      aria-label="GitHub"
+      href="https://github.com/faraazb"
+      target="_blank"
+    />
+    <Link
+      type="icon"
+      icon="linkedin"
+      aria-label="LinkedIn"
+      href="https://linkedin.com/in/faraazb"
+      target="_blank"
+    />
+    <Link
+      type="icon"
+      icon="x"
+      aria-label="X"
+      href="https://twitter.com/mfaraazb"
+      target="_blank"
+    />
+  </div>
+</footer>
+
+<style lang="scss">
+  @use "@styles/include-media" as query;
+
+  #footer {
+    border-top: thin dashed var(--border-primary);
+    background-color: var(--background-secondary);
+    --lr-margins: 12%;
+    @include query.media("<tablet") {
+      --lr-margins: 8%;
+      justify-content: center;
+    }
+    @include query.media(">=1440px") {
+      --lr-margins: 18%;
+    }
+    padding: 40px var(--lr-margins);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    //centers item inline - wrt row
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  #footer > * {
+    @include query.media("<=phone") {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+
+  .footer-nav-links {
+    grid-column: navigation;
+    font-family: var(--font-sans-serif);
+    display: flex;
+    column-gap: 20px;
+  }
+
+  #bye {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    justify-content: end;
+
+    .link--icon .icon {
+      width: 20px;
+    }
+  }
+
+  .contact-link svg.linkedin {
+    position: relative;
+    bottom: 3px;
+  }
+
+  .footnote {
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .contact-container {
+    width: 45%;
+    @include query.media("<=phone") {
+      width: 90%;
+    }
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    margin-bottom: 60px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 10px;
+    justify-content: center;
+  }
+
+  .form-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+
+  .form-item.input-field {
+    min-width: 250px;
+    flex-grow: 1;
+  }
+
+  .form-item.message {
+    min-width: 100%;
+  }
+
+  .form-item {
+    > textarea,
+    input {
+      font-size: 14px;
+      -webkit-appearance: none;
+      outline: none;
+      background-color: var(--background-secondary);
+      border: 0.1rem solid var(--border-primary);
+      border-radius: 2px;
+    }
+    > textarea:focus-visible,
+    input:focus-visible {
+      outline: 0.15rem solid var(--cyan-10);
+    }
+    > textarea {
+      min-height: 80px;
+    }
+    > input {
+      min-height: 30px;
+    }
+  }
+
+  .form-item.submit {
+    width: 140px;
+    justify-self: center;
+  }
+
+  .form-item.submit > .accent-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.45rem;
+  }
+
+  .loader {
+    width: 25px;
+    height: 25px;
+    border: 3px dotted var(--text-primary);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>

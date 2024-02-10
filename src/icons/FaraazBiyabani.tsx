@@ -9,9 +9,9 @@ export function FaraazBiyabani(props: SVGProps<SVGSVGElement>) {
       {...props}
     >
       <g
-        strokeLinecap="round"
-        fillRule="evenodd"
-        fontSize="9pt"
+        stroke-linecap="round"
+        fill-rule="evenodd"
+        font-size="9pt"
         fill="currentColor"
       >
         <path

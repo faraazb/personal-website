@@ -2,10 +2,10 @@
   "sections": {
     "about": {
       "title": "Hello!",
-      "bio": "I am Faraaz Biyabani, a software tinkerer and associate software engineer at Contentstack. With a passion for crafting practical wonders, I thrive on exploring new tools, frameworks, and contributing to open source projects.",
+      "bio": "I am Faraaz Biyabani, a software tinkerer and associate software engineer at Contentstack. I enjoy exploring new tools and leveraging them to build practical and useful things. I am passionate about the web and a fan of open source software.",
       "picture": {
         "src": "../../assets/images/faraaz.png",
-        "alt": "A picture of Faraaz"
+        "alt": "Faraaz Biyabani"
       },
       "links": [
         {
@@ -23,38 +23,39 @@
     "skills": {
       "heading": "Skills",
       "skills": [
+        
+        {
+          "title": "TypeScript",
+          "icon": "typescript"
+        },
+        {
+          "title": "HTML",
+          "icon": "html"
+        },
+        {
+          "title": "CSS",
+          "icon": "css"
+        },
         {
           "title": "Python",
-          "icon": "javascript"
-        },
-        {
-          "title": "JavaScript",
-          "icon": "javascript"
-        },
-        {
-          "title": "Java",
-          "icon": "javascript"
-        },
-        {
-          "title": "Git",
-          "icon": "javascript"
+          "icon": "python"
         },
         {
           "title": "SQL",
-          "icon": "javascript",
+          "icon": "database",
           "mono": true
         },
         {
           "title": "GraphQL",
-          "icon": "javascript"
+          "icon": "graphql"
         },
         {
           "title": "ReactJS",
-          "icon": "javascript"
+          "icon": "react"
         },
         {
           "title": "Flask",
-          "icon": "javascript",
+          "icon": "flask",
           "mono": true
         }
       ]
@@ -94,6 +95,12 @@
         }
       ]
     },
+    "projects": [
+      "Intuition for Notion",
+      "Markerr",
+      "DCroSS",
+      "Feedbacker"
+    ],
     "achievements": {
       "heading": "Achievements",
       "achievements": [

@@ -14,7 +14,7 @@ const { title, accent, picture, links, description } = Astro.props;
   </div>
   <div class="window">
     <div class="display">
-      <Image src={picture.light} class="image" alt={"Project screenshot"} />
+      <Image src={picture.dark} class="image" alt={"Project screenshot"} />
     </div>
     <p class="description">{description}</p>
     <div class="links">
@@ -28,7 +28,7 @@ const { title, accent, picture, links, description } = Astro.props;
               target="_blank"
               rel="noreferrer"
             >
-              {title}>
+              {title}
             </Link>
           );
         })
@@ -49,6 +49,18 @@ const { title, accent, picture, links, description } = Astro.props;
     max-width: 500px;
     min-width: 200px;
     min-height: 400px;
+
+    &.pink {
+      box-shadow: 10px 10px 0 var(--pink-30);
+    }
+
+    &.green {
+      box-shadow: 10px 10px 0 var(--green-40);
+    }
+
+    &.yellow {
+      box-shadow: 10px 10px 0 var(--yellow-30);
+    }
   }
 
   .titlebar {
@@ -71,6 +83,7 @@ const { title, accent, picture, links, description } = Astro.props;
   }
 
   .description {
+    line-height: 1.3;
     font-family: var(--font-sans-serif);
     color: var(--text-primary);
   }

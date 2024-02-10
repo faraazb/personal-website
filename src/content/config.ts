@@ -13,6 +13,7 @@ const pagesCollection = defineCollection({
         about: about({ image }),
         skills: skills,
         experience: experience({ image }),
+        projects: z.string().array(),
         achievements: achievements({ image }),
       }),
       embedUrl: z.string().optional(),

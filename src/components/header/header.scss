@@ -4,7 +4,7 @@
   //width: 100%;
   //height is assigned using grid-template-rows below
   //min-height: 10%;
-  position: fixed;
+  position: sticky;
   top: 0;
   display: grid;
 
@@ -27,10 +27,9 @@
   transition:
     background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1),
     top 500ms ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 24px 0,
+  rgba(0, 0, 0, 0.08) 0 0 0 1px;
   z-index: 1;
-  box-shadow:
-    rgba(0, 0, 0, 0.05) 0 1px 24px 0,
-    rgba(0, 0, 0, 0.08) 0 0 0 1px;
 }
 
 #nav-header.scroll-up,
@@ -75,13 +74,10 @@
   display: flex;
   column-gap: 20px;
   align-items: center;
+  justify-content: end;
   @include query.media("<=tablet") {
     display: none;
   }
-}
-
-.nav-link:nth-last-child(5) {
-  margin-left: auto;
 }
 
 .nav-link {
@@ -120,9 +116,21 @@
 }
 
 .nav-menu {
-  grid-row-start: 2;
-  grid-column-start: 2;
-  margin: 5px 10px 40px 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: var(--header-bg);
+  transition:
+    background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1),
+    top 500ms ease-in-out;
+  z-index: 1;
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  padding: 4% 0 40px 8%;
+  // padding-left: 8%;
+  // padding-bottom: 40px;
 }
 
 .nav-menu.closed {

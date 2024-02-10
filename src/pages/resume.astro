@@ -1,17 +1,19 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getEntry } from "astro:content";
 
-const entry = await getEntry({ collection: "pages", id: "resume" });
-
-const { embedUrl } = entry.data;
+const embedUrl =
+  "https://drive.google.com/file/d/19YXpH35ODAopDbyCPTRWImxE2PP_1I3N/preview";
 ---
 
 <Layout title="Resume - Faraaz Biyabani">
   <div class="resume-container">
     <div class="resume">
-      <iframe id="resume-iframe" title="Resume" src={embedUrl} allow="autoplay"
-      ></iframe>
+      <iframe
+        id="resume-iframe"
+        title="Resume"
+        src={embedUrl}
+        allow="autoplay"
+        loading="lazy"></iframe>
     </div>
   </div>
 </Layout>
@@ -20,6 +22,7 @@ const { embedUrl } = entry.data;
   @use "@styles/include-media" as query;
 
   .resume-container {
+    margin-bottom: 100px;
     width: 100%;
     display: flex;
     align-items: center;

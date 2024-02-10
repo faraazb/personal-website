@@ -1,15 +1,13 @@
-// import React, { useCallback, useEffect, useState } from "react";
 import { Fragment } from "preact/jsx-runtime";
 import { useState, useEffect, useCallback } from "preact/hooks";
 import "./header.scss";
-import { Menu, Switch } from "@headlessui/react";
+import { Menu } from "@headlessui/react";
 import { Sun, Moon, Hamburger, FaraazBiyabani } from "@icons/index";
-// import { useTheme } from "../../theme/theme-provider";
+import { setTheme, useTheme } from "src/store/theme";
 
 export const Header = () => {
   const isBrowser = typeof window !== "undefined";
-  // const { theme, switchTheme } = useTheme();
-  const [theme, switchTheme] = useState("light");
+  const theme = useTheme();
   const [scrollDirection, setScrollDirection] = useState("");
 
   let supportPageOffset, isCSS1Compat;
@@ -70,6 +68,10 @@ export const Header = () => {
 
   let SwitchThemeIcon = theme === "light" ? Moon : Sun;
 
+  const setNextTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
     <header id="nav-header" className={scrollDirection}>
       <div className="logo">
@@ -86,7 +88,7 @@ export const Header = () => {
         <button
           title="Switch Theme"
           className="nav-link icon-button"
-          onClick={switchTheme}
+          onClick={setNextTheme}
           tabIndex={0}
         >
           <SwitchThemeIcon />
@@ -100,7 +102,7 @@ export const Header = () => {
         <a href="resume" className="nav-link">
           Resume
         </a>
-        <a href="#contact" className="nav-link">
+        <a href="/contact" className="nav-link">
           Contact
         </a>
       </div>
@@ -121,7 +123,7 @@ export const Header = () => {
                         className={`${
                           active ? "item-active" : ""
                         } nav-menu-item icon-button`}
-                        onClick={switchTheme}
+                        onClick={setNextTheme}
                         aria-label="Switch theme"
                       >
                         <SwitchThemeIcon />
@@ -171,7 +173,7 @@ export const Header = () => {
                         className={`${
                           active ? "item-active" : ""
                         } nav-menu-item`}
-                        href={"#contact"}
+                        href={"/contact"}
                       >
                         Contact
                       </a>

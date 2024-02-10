@@ -1,0 +1,9 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { ContactForm } from "@components/contact-form";
+---
+
+<Layout>
+  <ContactForm client:load />
+  <script is:inline src="https://s.pageclip.co/v1/pageclip.js"></script>
+</Layout>

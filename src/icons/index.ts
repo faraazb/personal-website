@@ -8,3 +8,5 @@ export { Sun } from "./Sun";
 export { Building } from "./Building";
 export { DateRange } from "./DateRange";
 export { JavaScript } from "./JavaScript";
+export { X } from "./X";
+export { TypeScript } from "./TypeScript";
