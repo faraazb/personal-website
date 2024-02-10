@@ -21,7 +21,7 @@ const embedUrl = import.meta.env.PUBLIC_RESUME_EMBED_URL;
   @use "@styles/include-media" as query;
 
   .resume-container {
-    margin-bottom: 100px;
+    margin: var(--section-margin-top) 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -29,13 +29,12 @@ const embedUrl = import.meta.env.PUBLIC_RESUME_EMBED_URL;
   }
 
   .resume {
+    height: calc(100vh - 80px);
     @include query.media("<=tablet") {
-      margin-top: 120px;
       height: 450px;
     }
     @include query.media(">=tablet") {
-      margin-top: 120px;
-      height: 1150px;
+      min-height: 1150px;
       min-width: 800px;
       max-width: 900px;
     }

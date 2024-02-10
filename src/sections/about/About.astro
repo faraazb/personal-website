@@ -88,6 +88,7 @@ const { title, bio, links, picture } = data;
   .profile-picture {
     height: 100%;
     width: 100%;
+    object-fit: cover;
     @include query.media("<=tablet") {
       border-radius: 50%;
     }
