@@ -1,14 +1,12 @@
 import { z } from "astro:content";
-import { icons } from "@icons/types";
-
-const [firstIcon, ...otherIcons] = Object.keys(icons);
+import { ZodIcons } from "src/types";
 
 export const skills = z.object({
   heading: z.string(),
   skills: z
     .object({
       title: z.string(),
-      icon: z.enum([firstIcon, ...otherIcons]),
+      icon: ZodIcons,
       mono: z.boolean().optional(),
     })
     .array(),
