@@ -35,11 +35,9 @@ export function ContactForm() {
         contactForm,
         (error: any, response: any) => {
           if (error) {
-            setFormResponse(
-              "Sorry! Try again after sometime or please send an email.",
-            );
+            setFormResponse("Sorry! Please try again after sometime.");
           } else if (response && response.data === "ok") {
-            setFormResponse("Sent! I will get back to you soon!");
+            setFormResponse("Great! I will get back to you soon!");
           }
           setIsFormSubmitting(false);
         },

@@ -14,25 +14,13 @@ permissions:
   pages: write
   id-token: write
 
-env:
-  TEST_THIS: "hello"
-  CONTEXT_VAR: ${{ vars.PUBLIC_PAGECLIP_SITE_KEY }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    # environment is required to allow access to vars context
     environment:
       name: github-pages
     steps:
-      - name: Show env variables
-        run: |
-          env
-        env:
-          SOME_OUTSIDE_VAR: ${{ env.TEST_THIS }}
-          OUTSIDE_CONTEXT: ${{ env.CONTEXT_VAR }}
-          PUBLIC_RESUME_EMBED_URL: ${{ vars.PUBLIC_RESUME_EMBED_URL }}
-          PUBLIC_PAGECLIP_SITE_KEY: ${{ vars.PUBLIC_PAGECLIP_SITE_KEY }}
-          PUBLIC_PAGECLIP_FORM_NAME: ${{ vars.PUBLIC_PAGECLIP_FORM_NAME }}
       - name: Checkout your repository using git
         uses: actions/checkout@v3
       - name: Install, build, and upload your site
