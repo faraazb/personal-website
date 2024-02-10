@@ -99,7 +99,7 @@ export const Header = () => {
         <a href="/#projects" className="nav-link">
           Projects
         </a>
-        <a href="resume" className="nav-link">
+        <a href="/resume" className="nav-link">
           Resume
         </a>
         <a href="/contact" className="nav-link">

@@ -18,6 +18,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Show env variables
+        run: |
+          env
+        env:
+          PUBLIC_RESUME_EMBED_URL: ${{ vars.PUBLIC_RESUME_EMBED_URL }}
+          PUBLIC_PAGECLIP_SITE_KEY: ${{ vars.PUBLIC_PAGECLIP_SITE_KEY }}
+          PUBLIC_PAGECLIP_FORM_NAME: ${{ vars.PUBLIC_PAGECLIP_FORM_NAME }}
       - name: Checkout your repository using git
         uses: actions/checkout@v3
       - name: Install, build, and upload your site
