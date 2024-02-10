@@ -21,7 +21,12 @@ const { heading, experiences } = data;
         return (
           <div class="experience">
             <div class="company-icon-container">
-              <a class="company-link" href={company.url} target="_blank" rel="noreferrer">
+              <a
+                class="company-link"
+                href={company.url}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image
                   src={company.logo}
                   class="company-icon"
@@ -66,8 +71,6 @@ const { heading, experiences } = data;
     display: flex;
     flex-direction: column;
     row-gap: 0.8rem;
-    // column-gap: 4px;
-    //align-items: center;
   }
 
   .role {
@@ -98,7 +101,6 @@ const { heading, experiences } = data;
     width: 18px;
     margin-left: -3px;
   }
-
 
   // .company-link__title {
   //   // to offset the padding added by .underline-link
