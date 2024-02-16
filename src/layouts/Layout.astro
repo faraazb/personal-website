@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import { Header } from "@components/header";
 import Footer from "@components/Footer.astro";
+import CommonSeo from "@seo/Common.astro";
 
 interface Props {
   title?: string;
@@ -19,7 +20,9 @@ const isProduction = import.meta.env.PROD;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {isProduction ? <link rel="sitemap" href="/sitemap-index.xml" /> : null}
     <title>{title}</title>
+    <CommonSeo title={title} />
     <ViewTransitions />
   </head>
   <body>

@@ -22,7 +22,10 @@
       ],
       "@content/*": [
         "./src/content/*"
-      ]
+      ],
+      "@seo/*": [
+        "./src/seo/*"
+      ],
     },
     "jsx": "react-jsx",
     "jsxImportSource": "preact"

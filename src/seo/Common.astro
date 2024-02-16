@@ -1,0 +1,72 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import faraaz from "../assets/images/faraaz.png";
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+const defaultTitle = title ?? "Faraaz Biyabani";
+const descripttion =
+  "Software tinkerer, Associate Software Engineer at Contentstack";
+
+const baseUrl = Astro.site ?? "https://faraazbiyabani.me";
+const url = new URL(Astro.url.pathname ?? "", baseUrl);
+
+const imageUrl = new URL(faraaz.src, baseUrl).toString();
+
+const meta: HTMLAttributes<"meta">[] = [
+  {
+    property: "og:title",
+    content: defaultTitle,
+  },
+  {
+    property: "og:description",
+    content: descripttion,
+  },
+  {
+    property: "og:image",
+    content: imageUrl,
+  },
+  {
+    property: "og:url",
+    content: url,
+  },
+  {
+    property: "og:type",
+    content: "website",
+  },
+  {
+    name: "twitter:card",
+    content: "summary",
+  },
+  {
+    name: "twitter:title",
+    content: defaultTitle,
+  },
+  {
+    name: "twitter:url",
+    content: url,
+  },
+  {
+    name: "twitter:description",
+    content: descripttion,
+  },
+  {
+    name: "twitter:image",
+    content: imageUrl,
+  },
+  {
+    name: "twitter:creator",
+    content: "@mfaraazb",
+  },
+  {
+    name: "twitter:site",
+    content: "@mfaraazb",
+  },
+];
+---
+
+{meta.map((item) => <meta {...item} />)}
